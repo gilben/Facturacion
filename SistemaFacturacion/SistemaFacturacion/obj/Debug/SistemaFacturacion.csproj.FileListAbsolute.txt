@@ -1,0 +1,26 @@
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmConsultas.resources
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmFactura.resources
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Properties.Resources.resources
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csproj.GenerateResource.Cache
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe.licenses
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.exe.config
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.exe
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.pdb
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\bin\Debug\C1.Win.C1Command.4.dll
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\bin\Debug\C1.Win.C1Command.4.xml
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csprojResolveAssemblyReference.cache
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.FrmMenu.resources
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe
+C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.pdb
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.exe.config
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.exe
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.pdb
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmConsultas.resources
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmFactura.resources
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Form.resources
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Properties.Resources.resources
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csproj.GenerateResource.Cache
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.pdb
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csprojResolveAssemblyReference.cache
