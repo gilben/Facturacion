@@ -11,10 +11,14 @@ namespace SistemaFacturacion.Clases
 {
     public class clsConexion
     {
-        private static SqlConnection Connection = new SqlConnection(System.Configuration.ConfigurationSettings.AppSettings["strConexion"].ToString());
 
 
-   
+
+
+        public static SqlConnection Connection = new SqlConnection(System.Configuration.ConfigurationSettings.AppSettings["strConexion"].ToString());
+
+     
+     
 
 
         public DataSet ConsultasCombos(int Parametro)

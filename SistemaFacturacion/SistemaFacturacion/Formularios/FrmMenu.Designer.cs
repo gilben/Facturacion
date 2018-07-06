@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +41,7 @@
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.unidadeDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +64,8 @@
             this.empresaToolStripMenuItem,
             this.resolucionesToolStripMenuItem,
             this.vendedoresToolStripMenuItem,
-            this.parametrosToolStripMenuItem});
+            this.parametrosToolStripMenuItem,
+            this.unidadeDeMedidaToolStripMenuItem});
             this.facturasToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.lista;
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
             this.facturasToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
@@ -72,42 +75,42 @@
             // 
             this.insumosToolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.tranvia;
             this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
-            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
             this.insumosToolStripMenuItem1.Text = "Insumos";
             // 
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.avatar;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.industria;
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.empresaToolStripMenuItem.Text = "Empresa";
             // 
             // resolucionesToolStripMenuItem
             // 
             this.resolucionesToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.resolucion;
             this.resolucionesToolStripMenuItem.Name = "resolucionesToolStripMenuItem";
-            this.resolucionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.resolucionesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.resolucionesToolStripMenuItem.Text = "Resoluciones";
             // 
             // vendedoresToolStripMenuItem
             // 
             this.vendedoresToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.avatar;
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
             // 
             // parametrosToolStripMenuItem
             // 
             this.parametrosToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.parametros;
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
             // insumosToolStripMenuItem
@@ -144,6 +147,13 @@
             this.tabControl1.Size = new System.Drawing.Size(1146, 637);
             this.tabControl1.TabIndex = 2;
             // 
+            // unidadeDeMedidaToolStripMenuItem
+            // 
+            this.unidadeDeMedidaToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.cartabon;
+            this.unidadeDeMedidaToolStripMenuItem.Name = "unidadeDeMedidaToolStripMenuItem";
+            this.unidadeDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.unidadeDeMedidaToolStripMenuItem.Text = "Unidade De Medida";
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +161,7 @@
             this.ClientSize = new System.Drawing.Size(1146, 661);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form";
@@ -179,6 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ToolStripMenuItem unidadeDeMedidaToolStripMenuItem;
     }
 }
 

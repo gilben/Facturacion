@@ -54,6 +54,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Clases\clsFiltros.cs" />
+    <Compile Include="Clases\clsUtilidades.cs" />
+    <Compile Include="Clases\ProcesaDatos.cs" />
     <Compile Include="Formularios\FrmConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +125,7 @@
     <None Include="Img\industria.png" />
     <None Include="Img\conexion.png" />
     <None Include="Img\avatar.png" />
+    <None Include="Img\cartabon.png" />
     <Content Include="Img\disco-flexible.png" />
     <Content Include="Img\impresora %281%29.png" />
     <Content Include="Img\impresora.png" />
