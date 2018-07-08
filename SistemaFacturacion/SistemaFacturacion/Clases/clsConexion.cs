@@ -20,12 +20,8 @@ namespace SistemaFacturacion.Clases
      
      
 
-
-        public DataSet ConsultasCombos(int Parametro)
-        {
-           return AD.ExecuteDataset(Connection, "paConsultas", Parametro);
-        }
-
+  
+     
 
     }
 }

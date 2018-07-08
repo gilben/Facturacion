@@ -103,6 +103,16 @@ namespace SistemaFacturacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancelar {
+            get {
+                object obj = ResourceManager.GetObject("cancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cartabon {
             get {
                 object obj = ResourceManager.GetObject("cartabon", resourceCulture);
@@ -203,6 +213,16 @@ namespace SistemaFacturacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap recepcion__1_ {
+            get {
+                object obj = ResourceManager.GetObject("recepcion (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recepcion1 {
             get {
                 object obj = ResourceManager.GetObject("recepcion1", resourceCulture);
@@ -226,6 +246,16 @@ namespace SistemaFacturacion.Properties {
         internal static System.Drawing.Bitmap tranvia {
             get {
                 object obj = ResourceManager.GetObject("tranvia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volver_a_usar {
+            get {
+                object obj = ResourceManager.GetObject("volver-a-usar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

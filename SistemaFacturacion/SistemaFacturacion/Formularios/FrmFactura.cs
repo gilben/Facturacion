@@ -21,7 +21,8 @@ namespace SistemaFacturacion.Formularios
         DataTable dt;
         DataSet ds;
         Clases.clsUtilidades Utilidades = new Clases.clsUtilidades();
-        Clases.clsConexion con = new Clases.clsConexion();
+        Clases.ProcesaDatos pd = new Clases.ProcesaDatos();
+
 
 
 
@@ -41,12 +42,44 @@ namespace SistemaFacturacion.Formularios
 
         }
 
+        private void Refresh()
+        {
+            ds = pd.ConsultasCombos("paConsultas", "0");
+            //string[] s = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
 
+            cbbResolucion.DataSource = ds.Tables[0];
+            cbbResolucion.ValueMember = "NumeroResolucion";
+            this.cbbResolucion.AutoCompleteCustomSource.AddRange(ds.Tables[0].Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray());
+            this.cbbResolucion.AutoCompleteMode = AutoCompleteMode.Suggest;
+            this.cbbResolucion.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+            DataView dtv = new DataView(ds.Tables[1]);
+            dtv.Sort = "Nombre DESC";
+            DataTable dt = dtv.ToTable();
+            cbbCliente.DataSource = dt;
+            cbbCliente.DisplayMember = "RazonSocial";
+            cbbCliente.ValueMember = "Nit";
+            cbbCliente.Text = "Selecione un cliente";
+
+            txtNumFac.Text = ds.Tables[2].Rows[0]["NumFac"].ToString();
+            dgvInsumos.DataSource = ds.Tables[3];
+            dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
+            //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
+            Utilidades.FormatearGrid(dgvInsumos, "Precio");
+
+            cbbCompania.DataSource = ds.Tables[5];
+            cbbCompania.DisplayMember = "RazonSocial";
+            cbbCompania.ValueMember = "IdCompañia";
+
+        }
 
         private void CargarCombos()
         {
            
-            ds = con.ConsultasCombos(0);
+            ds = pd.ConsultasCombos("paConsultas","0");
             //string[] s = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
 
             cbbResolucion.DataSource = ds.Tables[0];
@@ -67,6 +100,7 @@ namespace SistemaFacturacion.Formularios
             cbbCliente.DataSource = dt;
             cbbCliente.DisplayMember = "RazonSocial";
             cbbCliente.ValueMember = "Nit";
+            cbbCliente.Text = "Selecione un cliente";
 
 
 
@@ -88,6 +122,8 @@ namespace SistemaFacturacion.Formularios
             //cmb.DisplayMember = "NombreUM";
 
             //dgvInsumos.Columns.Insert(2, cmb);
+            dgvInsumosFacturar.DataSource = ds.Tables[4];
+          
 
 
 
@@ -161,7 +197,7 @@ namespace SistemaFacturacion.Formularios
             {
                 if (rows[0].ToString() == dgvInsumos.Rows[row].Cells["CodigoInsumo"].Value.ToString())
                 {
-                    MessageBox.Show("El insumo ya esta en la lista para facturar", "Sistema de facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El insumo '"+ rows[0].ToString() + "' ya esta en la lista para facturar", "Sistema de facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -182,20 +218,27 @@ namespace SistemaFacturacion.Formularios
             dr[1] = dgvInsumos.Rows[row].Cells["Producto/servicio"].Value;
             dr[2] = dgvInsumos.Rows[row].Cells["Cantidad"].Value;
             dr[3] = Iva;
-            dr[4] = VlrUnitario;//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
-            dr[5] = VlrIva;//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
-            dr[6] = Bruto;//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
-            dr[7] = Total;//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[4] = VlrUnitario.ToString("N");//, System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[5] = VlrIva.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[6] = Bruto.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[7] = Total.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
 
 
 
             ds.Tables[4].Rows.InsertAt(dr, 0);
             dgvInsumosFacturar.DataSource = ds.Tables[4];
-            dgvInsumosFacturar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+
+
+
+            //dgvInsumosFacturar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             //dgvInsumosFacturar.Rows.Add(dgvInsumos.Rows[row].Cells["CodigoInsumo"].Value, dgvInsumos.Rows[row].Cells["Nombre"].Value,Iva, dgvInsumos.Rows[row].Cells["Cantidad"].Value, VlrUnitario.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us")), VlrIva.ToString("c0",System.Globalization.CultureInfo.GetCultureInfo("en-us")), Bruto.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us")), Total.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us")));
 
 
-            Utilidades.FormatearGrid(dgvInsumosFacturar, "VlrUnitario");
+            // Utilidades.FormatearGrid(dgvInsumosFacturar, "Iva");
+
+
+
             // Utilidades.FormatearGrid(dgvInsumosFacturar, "VlrIva");
             //Utilidades.FormatearGrid(dgvInsumosFacturar, "VlrBruto");
             //Utilidades.FormatearGrid(dgvInsumosFacturar, "VlrTotal");
@@ -207,7 +250,7 @@ namespace SistemaFacturacion.Formularios
         {
            
 
-            if (dgvInsumos.CurrentCell.ColumnIndex == 2 || dgvInsumos.CurrentCell.ColumnIndex == 5)
+            if (dgvInsumos.CurrentCell.ColumnIndex == 2 || dgvInsumos.CurrentCell.ColumnIndex == 6)
             {
                 dgvInsumos.BeginEdit(true);
             }
@@ -215,6 +258,12 @@ namespace SistemaFacturacion.Formularios
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(ValidarControles())
+
+            {
+
+                return;
+            }
             GuardarDocumento();
         }
 
@@ -224,6 +273,7 @@ namespace SistemaFacturacion.Formularios
             if (dgvInsumosFacturar.RowCount == 0)
             {
                 MessageBox.Show("No hay datos para guardar", "Sistema de facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
                 return;
             }
 
@@ -245,7 +295,7 @@ namespace SistemaFacturacion.Formularios
                 Descuento = double.Parse(txtDescuento.Text);
 
                 ds.Tables[4].Columns.Remove("Producto/servicio");
-                DataTable dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Descuento, dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
+                DataTable dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(),cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Descuento, dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
 
                 if (dts.Rows[0][0].ToString()=="ok")
                 {
@@ -258,9 +308,9 @@ namespace SistemaFacturacion.Formularios
                 else
                 {
                     MessageBox.Show(dts.Rows[0][0].ToString(), "Error Sistemas de facturacion Revercer", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    dgvInsumosFacturar.DataSource = null;
+                   // dgvInsumosFacturar.DataSource = null;
 
-                    CargarCombos();
+                    //CargarCombos();
                 }
 
             }
@@ -277,7 +327,111 @@ namespace SistemaFacturacion.Formularios
             
         }
 
-        
+        private void cbbCliente_Validated(object sender, EventArgs e)
+        {
+            DataSet dsDir = new DataSet();
+            dsDir = pd.ConsultasCombos("paConsultaDirecciones", cbbCliente.SelectedValue.ToString());
+            cbbSede.DataSource = dsDir.Tables[0];
+            cbbSede.ValueMember = "idDireccion";
+            cbbSede.DisplayMember = "NombreSede";
+
+
+
+        }
+
+         private bool ValidarControles()
+        {
+            if(cbbCliente.Text== "Selecione un cliente")
+            {
+                MessageBox.Show("Debe Seleccionar un cliente", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbbCliente.Focus();
+                return true;
+            }
+
+
+            
+           
+            return false;
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+
+            long Dft = 0;
+           
+            if(!long.TryParse(txtDescuento.Text, out Dft))
+            {
+                MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDescuento.Text = "0";
+                txtDescuento.SelectAll();
+                return ;
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dgvInsumosFacturar.RowCount > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Hay una factura en proceso si continua perdera la informacion que no haya guardado, desea continuar?", "Sistema Facturacion Reverdecer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+
+            }
+            else
+            {
+                this.Close();
+            }
+
+        }
+
+      
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if(dgvInsumosFacturar.RowCount>0)
+            {
+                DialogResult dialogResult = MessageBox.Show( "Hay una factura en proceso si continua perdera la informacion que no haya guardado, desea continuar?", "Sistema Facturacion Reverdecer", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if(dialogResult==DialogResult.Yes)
+                {
+                    CargarCombos();
+                }
+
+
+
+
+            }
+
+        }
+
+        private void refrescarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvInsumosFacturar.RowCount > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Hay una factura en proceso si continua perdera la informacion que no haya guardado, desea continuar?", "Sistema Facturacion Reverdecer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CargarCombos();
+                }
+
+
+
+
+            }
+            else
+            {
+                CargarCombos();
+            }
+        }
+
+
     }
 }
 

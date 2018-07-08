@@ -14,7 +14,7 @@ namespace SistemaFacturacion.Clases
         public void FormatearGrid(DataGridView dgv, string columna)
         {
             dgv.Columns[columna].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("en-us");
-            dgv.Columns[columna].DefaultCellStyle.Format = string.Format("C");
+            dgv.Columns[columna].DefaultCellStyle.Format = string.Format("N");
 
         }
     }

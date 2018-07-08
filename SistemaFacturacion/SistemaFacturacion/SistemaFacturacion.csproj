@@ -35,10 +35,13 @@
     <Reference Include="Microsoft.ApplicationBlocks.Data">
       <HintPath>.\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,8 +77,24 @@
     <Compile Include="Formularios\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRptFac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptFac.Designer.cs">
+      <DependentUpon>frmRptFac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sistema_FacturacionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_FacturacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_FacturacionDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_FacturacionDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\FrmConsultas.resx">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptFac.resx">
+      <DependentUpon>frmRptFac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +117,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rptFactura.rdlc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,18 +127,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sistema_FacturacionDataSet.xsc">
+      <DependentUpon>Sistema_FacturacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_FacturacionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_FacturacionDataSet.xss">
+      <DependentUpon>Sistema_FacturacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet1.xsc">
+      <DependentUpon>Sistema_FacturacionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_FacturacionDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_FacturacionDataSet1.xss">
+      <DependentUpon>Sistema_FacturacionDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Img\archivo-nuevo.png" />
     <Content Include="Img\archivo.png" />
+    <None Include="Resources\cancelar.png" />
+    <None Include="Resources\recepcion %281%29.png" />
+    <None Include="Resources\volver-a-usar.png" />
     <None Include="Img\lista.png" />
     <None Include="Img\recepcion.png" />
     <None Include="Img\tranvia.png" />
