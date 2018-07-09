@@ -68,7 +68,7 @@ namespace SistemaFacturacion.Formularios
             dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
-            Utilidades.FormatearGrid(dgvInsumos, "Precio");
+            Utilidades.FormatearGrid(dgvInsumos, "Precio",true);
 
             cbbCompania.DataSource = ds.Tables[5];
             cbbCompania.DisplayMember = "RazonSocial";
@@ -109,7 +109,8 @@ namespace SistemaFacturacion.Formularios
             dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
-            Utilidades.FormatearGrid(dgvInsumos, "Precio");
+            Utilidades.FormatearGrid(dgvInsumos, "Precio",true);
+            Utilidades.AlinearContenidoColumna(dgvInsumos);
 
             //DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
             //BindingSource bs1 = new BindingSource();
@@ -217,16 +218,18 @@ namespace SistemaFacturacion.Formularios
             dr[0] = dgvInsumos.Rows[row].Cells["CodigoInsumo"].Value;
             dr[1] = dgvInsumos.Rows[row].Cells["Producto/servicio"].Value;
             dr[2] = dgvInsumos.Rows[row].Cells["Cantidad"].Value;
-            dr[3] = Iva;
-            dr[4] = VlrUnitario.ToString("N");//, System.Globalization.CultureInfo.GetCultureInfo("en-us"));
-            dr[5] = VlrIva.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
-            dr[6] = Bruto.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
-            dr[7] = Total.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[3] = dgvInsumos.Rows[row].Cells["UM"].Value;
+            dr[4] = Iva;
+            dr[5] = VlrUnitario.ToString("N");//, System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[6] = VlrIva.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[7] = Bruto.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
+            dr[8] = Total.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
 
 
 
             ds.Tables[4].Rows.InsertAt(dr, 0);
             dgvInsumosFacturar.DataSource = ds.Tables[4];
+            Utilidades.AlinearContenidoColumna(dgvInsumosFacturar);
 
 
 
@@ -357,14 +360,16 @@ namespace SistemaFacturacion.Formularios
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
 
+
+
             long Dft = 0;
-           
-            if(!long.TryParse(txtDescuento.Text, out Dft))
+
+            if (!long.TryParse(txtDescuento.Text, out Dft))
             {
                 MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDescuento.Text = "0";
                 txtDescuento.SelectAll();
-                return ;
+                return;
 
             }
         }
@@ -397,11 +402,16 @@ namespace SistemaFacturacion.Formularios
                 if(dialogResult==DialogResult.Yes)
                 {
                     CargarCombos();
+                    
                 }
 
 
 
 
+
+            }else
+            {
+                CargarCombos();
             }
 
         }
@@ -431,7 +441,7 @@ namespace SistemaFacturacion.Formularios
             }
         }
 
-
+   
     }
 }
 

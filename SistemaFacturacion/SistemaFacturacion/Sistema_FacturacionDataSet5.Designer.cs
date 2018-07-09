@@ -20,9 +20,9 @@ namespace SistemaFacturacion {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Sistema_FacturacionDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Sistema_FacturacionDataSet5")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Sistema_FacturacionDataSet : global::System.Data.DataSet {
+    public partial class Sistema_FacturacionDataSet5 : global::System.Data.DataSet {
         
         private paConsultaReporteFacturaDataTable tablepaConsultaReporteFactura;
         
@@ -30,7 +30,7 @@ namespace SistemaFacturacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Sistema_FacturacionDataSet() {
+        public Sistema_FacturacionDataSet5() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SistemaFacturacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected Sistema_FacturacionDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Sistema_FacturacionDataSet5(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace SistemaFacturacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Sistema_FacturacionDataSet cln = ((Sistema_FacturacionDataSet)(base.Clone()));
+            Sistema_FacturacionDataSet5 cln = ((Sistema_FacturacionDataSet5)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace SistemaFacturacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Sistema_FacturacionDataSet";
+            this.DataSetName = "Sistema_FacturacionDataSet5";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Sistema_FacturacionDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Sistema_FacturacionDataSet5.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablepaConsultaReporteFactura = new paConsultaReporteFacturaDataTable();
@@ -225,7 +225,7 @@ namespace SistemaFacturacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Sistema_FacturacionDataSet ds = new Sistema_FacturacionDataSet();
+            Sistema_FacturacionDataSet5 ds = new Sistema_FacturacionDataSet5();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1016,7 +1016,7 @@ namespace SistemaFacturacion {
                 this.columncelCliente.MaxLength = 50;
                 this.columnmailCliente.MaxLength = 50;
                 this.columncontactoCliente.MaxLength = 50;
-                this.columnDirCliente.ReadOnly = true;
+                this.columnDirCliente.AllowDBNull = false;
                 this.columnDirCliente.MaxLength = 50;
                 this.columnSedeCliente.MaxLength = 50;
                 this.columnNumDocumento.AllowDBNull = false;
@@ -1120,7 +1120,7 @@ namespace SistemaFacturacion {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Sistema_FacturacionDataSet ds = new Sistema_FacturacionDataSet();
+                Sistema_FacturacionDataSet5 ds = new Sistema_FacturacionDataSet5();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1468,12 +1468,7 @@ namespace SistemaFacturacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DirCliente {
                 get {
-                    try {
-                        return ((string)(this[this.tablepaConsultaReporteFactura.DirClienteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DirCliente\' in table \'paConsultaReporteFactura\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablepaConsultaReporteFactura.DirClienteColumn]));
                 }
                 set {
                     this[this.tablepaConsultaReporteFactura.DirClienteColumn] = value;
@@ -1977,18 +1972,6 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDirClienteNull() {
-                return this.IsNull(this.tablepaConsultaReporteFactura.DirClienteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDirClienteNull() {
-                this[this.tablepaConsultaReporteFactura.DirClienteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSedeClienteNull() {
                 return this.IsNull(this.tablepaConsultaReporteFactura.SedeClienteColumn);
             }
@@ -2215,7 +2198,7 @@ namespace SistemaFacturacion {
         }
     }
 }
-namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
+namespace SistemaFacturacion.Sistema_FacturacionDataSet5TableAdapters {
     
     
     /// <summary>
@@ -2406,7 +2389,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Sistema_FacturacionDataSet.paConsultaReporteFacturaDataTable dataTable, string NumFac) {
+        public virtual int Fill(Sistema_FacturacionDataSet5.paConsultaReporteFacturaDataTable dataTable, string NumFac) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((NumFac == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2425,7 +2408,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Sistema_FacturacionDataSet.paConsultaReporteFacturaDataTable GetData(string NumFac) {
+        public virtual Sistema_FacturacionDataSet5.paConsultaReporteFacturaDataTable GetData(string NumFac) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((NumFac == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2433,7 +2416,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(NumFac));
             }
-            Sistema_FacturacionDataSet.paConsultaReporteFacturaDataTable dataTable = new Sistema_FacturacionDataSet.paConsultaReporteFacturaDataTable();
+            Sistema_FacturacionDataSet5.paConsultaReporteFacturaDataTable dataTable = new Sistema_FacturacionDataSet5.paConsultaReporteFacturaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2507,7 +2490,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(Sistema_FacturacionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Sistema_FacturacionDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2517,7 +2500,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(Sistema_FacturacionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Sistema_FacturacionDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2527,7 +2510,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(Sistema_FacturacionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Sistema_FacturacionDataSet5 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -2561,7 +2544,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(Sistema_FacturacionDataSet dataSet) {
+        public virtual int UpdateAll(Sistema_FacturacionDataSet5 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

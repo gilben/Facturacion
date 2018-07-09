@@ -133,6 +133,16 @@ namespace SistemaFacturacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap discapacitado {
+            get {
+                object obj = ResourceManager.GetObject("discapacitado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap disco_flexible {
             get {
                 object obj = ResourceManager.GetObject("disco-flexible", resourceCulture);

@@ -77,11 +77,11 @@
     <Compile Include="Formularios\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRptFac.cs">
+    <Compile Include="FrmReporteFac.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRptFac.Designer.cs">
-      <DependentUpon>frmRptFac.cs</DependentUpon>
+    <Compile Include="FrmReporteFac.Designer.cs">
+      <DependentUpon>FrmReporteFac.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +95,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sistema_FacturacionDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Sistema_FacturacionDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_FacturacionDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_FacturacionDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\FrmConsultas.resx">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,8 +114,8 @@
     <EmbeddedResource Include="Formularios\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRptFac.resx">
-      <DependentUpon>frmRptFac.cs</DependentUpon>
+    <EmbeddedResource Include="FrmReporteFac.resx">
+      <DependentUpon>FrmReporteFac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -149,6 +159,28 @@
     <None Include="Sistema_FacturacionDataSet1.xss">
       <DependentUpon>Sistema_FacturacionDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="Sistema_FacturacionDataSet2.xsc">
+      <DependentUpon>Sistema_FacturacionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_FacturacionDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_FacturacionDataSet2.xss">
+      <DependentUpon>Sistema_FacturacionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet5.xsc">
+      <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_FacturacionDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_FacturacionDataSet5.xss">
+      <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -159,6 +191,7 @@
   <ItemGroup>
     <Content Include="Img\archivo-nuevo.png" />
     <Content Include="Img\archivo.png" />
+    <None Include="Resources\discapacitado.png" />
     <None Include="Resources\cancelar.png" />
     <None Include="Resources\recepcion %281%29.png" />
     <None Include="Resources\volver-a-usar.png" />

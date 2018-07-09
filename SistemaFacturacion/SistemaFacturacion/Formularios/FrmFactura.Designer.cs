@@ -66,13 +66,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvInsumosFacturar = new System.Windows.Forms.DataGridView();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.refrescarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -84,6 +80,10 @@
             this.rtxComentarios = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refrescarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -197,19 +197,19 @@
             // 
             // cbbResolucion
             // 
-            this.cbbResolucion.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbResolucion.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbResolucion.FormattingEnabled = true;
             this.cbbResolucion.Location = new System.Drawing.Point(28, 40);
             this.cbbResolucion.Name = "cbbResolucion";
-            this.cbbResolucion.Size = new System.Drawing.Size(241, 23);
+            this.cbbResolucion.Size = new System.Drawing.Size(241, 24);
             this.cbbResolucion.TabIndex = 0;
             // 
             // dtpFechavencimento
             // 
-            this.dtpFechavencimento.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechavencimento.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechavencimento.Location = new System.Drawing.Point(463, 63);
             this.dtpFechavencimento.Name = "dtpFechavencimento";
-            this.dtpFechavencimento.Size = new System.Drawing.Size(142, 22);
+            this.dtpFechavencimento.Size = new System.Drawing.Size(142, 23);
             this.dtpFechavencimento.TabIndex = 7;
             // 
             // label6
@@ -244,19 +244,19 @@
             // 
             // cbbCompania
             // 
-            this.cbbCompania.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbCompania.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbCompania.FormattingEnabled = true;
             this.cbbCompania.Location = new System.Drawing.Point(28, 81);
             this.cbbCompania.Name = "cbbCompania";
-            this.cbbCompania.Size = new System.Drawing.Size(241, 23);
+            this.cbbCompania.Size = new System.Drawing.Size(241, 24);
             this.cbbCompania.TabIndex = 8;
             // 
             // dtpFechaFactura
             // 
-            this.dtpFechaFactura.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFactura.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFactura.Location = new System.Drawing.Point(300, 64);
             this.dtpFechaFactura.Name = "dtpFechaFactura";
-            this.dtpFechaFactura.Size = new System.Drawing.Size(116, 22);
+            this.dtpFechaFactura.Size = new System.Drawing.Size(116, 23);
             this.dtpFechaFactura.TabIndex = 4;
             this.dtpFechaFactura.Value = new System.DateTime(2018, 7, 1, 0, 0, 0, 0);
             // 
@@ -276,11 +276,11 @@
             // 
             // cbbSede
             // 
-            this.cbbSede.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSede.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSede.FormattingEnabled = true;
             this.cbbSede.Location = new System.Drawing.Point(0, 82);
             this.cbbSede.Name = "cbbSede";
-            this.cbbSede.Size = new System.Drawing.Size(300, 23);
+            this.cbbSede.Size = new System.Drawing.Size(300, 24);
             this.cbbSede.TabIndex = 5;
             // 
             // label10
@@ -305,11 +305,11 @@
             // 
             // cbbCliente
             // 
-            this.cbbCliente.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbCliente.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbCliente.FormattingEnabled = true;
             this.cbbCliente.Location = new System.Drawing.Point(0, 41);
             this.cbbCliente.Name = "cbbCliente";
-            this.cbbCliente.Size = new System.Drawing.Size(300, 23);
+            this.cbbCliente.Size = new System.Drawing.Size(300, 24);
             this.cbbCliente.TabIndex = 2;
             this.cbbCliente.Validated += new System.EventHandler(this.cbbCliente_Validated);
             // 
@@ -355,7 +355,7 @@
             this.Insumos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Insumos.Location = new System.Drawing.Point(0, 0);
             this.Insumos.Name = "Insumos";
-            this.Insumos.Size = new System.Drawing.Size(656, 433);
+            this.Insumos.Size = new System.Drawing.Size(656, 451);
             this.Insumos.TabIndex = 1;
             this.Insumos.TabStop = false;
             this.Insumos.Text = "Insumos";
@@ -366,14 +366,12 @@
             this.dgvInsumos.AllowUserToDeleteRows = false;
             this.dgvInsumos.AllowUserToResizeColumns = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvInsumos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInsumos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvInsumos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -382,7 +380,7 @@
             this.dgvInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -394,22 +392,15 @@
             this.dgvInsumos.Location = new System.Drawing.Point(3, 18);
             this.dgvInsumos.Name = "dgvInsumos";
             this.dgvInsumos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInsumos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInsumos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvInsumos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvInsumos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInsumos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInsumos.Size = new System.Drawing.Size(650, 412);
+            this.dgvInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInsumos.Size = new System.Drawing.Size(650, 430);
             this.dgvInsumos.TabIndex = 0;
             this.dgvInsumos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvInsumos_CellMouseClick);
             this.dgvInsumos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvInsumos_MouseDoubleClick);
@@ -419,9 +410,10 @@
             this.panel3.BackColor = System.Drawing.Color.AliceBlue;
             this.panel3.Controls.Add(this.groupBox5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(0, 192);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1493, 76);
+            this.panel3.Size = new System.Drawing.Size(1493, 58);
             this.panel3.TabIndex = 1;
             // 
             // groupBox5
@@ -437,9 +429,10 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(9, 21);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 22);
+            this.textBox1.Size = new System.Drawing.Size(214, 23);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -451,7 +444,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(833, 433);
+            this.groupBox2.Size = new System.Drawing.Size(833, 451);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Insumos Seleccionados";
@@ -459,28 +452,35 @@
             // dgvInsumosFacturar
             // 
             this.dgvInsumosFacturar.AllowUserToAddRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvInsumosFacturar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvInsumosFacturar.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvInsumosFacturar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvInsumosFacturar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvInsumosFacturar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvInsumosFacturar.BackgroundColor = System.Drawing.Color.White;
             this.dgvInsumosFacturar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInsumosFacturar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInsumosFacturar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInsumosFacturar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInsumosFacturar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInsumosFacturar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInsumosFacturar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvInsumosFacturar.EnableHeadersVisualStyles = false;
             this.dgvInsumosFacturar.Location = new System.Drawing.Point(3, 19);
             this.dgvInsumosFacturar.Name = "dgvInsumosFacturar";
-            this.dgvInsumosFacturar.Size = new System.Drawing.Size(827, 411);
+            this.dgvInsumosFacturar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dgvInsumosFacturar.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvInsumosFacturar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInsumosFacturar.Size = new System.Drawing.Size(827, 429);
             this.dgvInsumosFacturar.TabIndex = 0;
-          
             // 
             // menuStrip2
             // 
@@ -501,29 +501,11 @@
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.recepcion__1_;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 39);
-            this.toolStripMenuItem1.Text = "&Nueva Factura";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(27, 39);
             this.toolStripMenuItem4.Text = "|";
-            // 
-            // guardarToolStripMenuItem
-            // 
-            this.guardarToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guardarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guardarToolStripMenuItem.Image")));
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(94, 39);
-            this.guardarToolStripMenuItem.Text = "&Guardar";
-            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -531,28 +513,11 @@
             this.toolStripMenuItem6.Size = new System.Drawing.Size(27, 39);
             this.toolStripMenuItem6.Text = "|";
             // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imprimirToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.impresora;
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(98, 39);
-            this.imprimirToolStripMenuItem.Text = "&Imprimir";
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(27, 39);
             this.toolStripMenuItem2.Text = "|";
-            // 
-            // refrescarToolStripMenuItem
-            // 
-            this.refrescarToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refrescarToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.volver_a_usar;
-            this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
-            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(103, 39);
-            this.refrescarToolStripMenuItem.Text = "Refrescar";
-            this.refrescarToolStripMenuItem.Click += new System.EventHandler(this.refrescarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -661,7 +626,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 268);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 250);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -671,9 +636,44 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(1493, 433);
+            this.splitContainer1.Size = new System.Drawing.Size(1493, 451);
             this.splitContainer1.SplitterDistance = 656;
             this.splitContainer1.TabIndex = 5;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.recepcion__1_;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 39);
+            this.toolStripMenuItem1.Text = "&Nueva Factura";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guardarToolStripMenuItem.Image")));
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(94, 39);
+            this.guardarToolStripMenuItem.Text = "&Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imprimirToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.impresora;
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(98, 39);
+            this.imprimirToolStripMenuItem.Text = "&Imprimir";
+            // 
+            // refrescarToolStripMenuItem
+            // 
+            this.refrescarToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refrescarToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.volver_a_usar;
+            this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
+            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(103, 39);
+            this.refrescarToolStripMenuItem.Text = "Refrescar";
+            this.refrescarToolStripMenuItem.Click += new System.EventHandler(this.refrescarToolStripMenuItem_Click);
             // 
             // FrmFactura
             // 

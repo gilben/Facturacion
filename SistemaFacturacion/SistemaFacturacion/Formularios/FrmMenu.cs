@@ -39,21 +39,35 @@ namespace SistemaFacturacion
         private void Form_Load(object sender, EventArgs e)
         {
 
+            cargarDatos();
 
+           dtpFechaInicial .Format = DateTimePickerFormat.Custom;
+            dtpFechaInicial.CustomFormat = "dd/MM/yyyy";
+            dtpFechaFinal.Format = DateTimePickerFormat.Custom;
+            dtpFechaFinal.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaInicial.Value = DateTime.Now;
+            this.dtpFechaInicial.Value = DateTime.Now;
+
+        }
+
+
+        private void cargarDatos()
+        {
             ds = pd.ConsultasCombos("paConsultarFacturas");
 
             dgvFacturas.DataSource = ds.Tables[0];
-            ut.FormatearGrid(dgvFacturas, "Iva");
-            ut.FormatearGrid(dgvFacturas, "SubTotal");
-            ut.FormatearGrid(dgvFacturas, "BaseGravada");
-            ut.FormatearGrid(dgvFacturas, "Descuento");
-            ut.FormatearGrid(dgvFacturas, "Total");
+            ut.AlinearContenidoColumna(dgvFacturas);
+            // ut.FormatearGrid(dgvFacturas, "Iva",true);
+            ut.FormatearGrid(dgvFacturas, "SubTotal", true);
+            ut.FormatearGrid(dgvFacturas, "BaseGravada", true);
+            ut.FormatearGrid(dgvFacturas, "Descuento", true);
+            ut.FormatearGrid(dgvFacturas, "Total", true);
+            ut.FormatearGrid(dgvFacturas, "ValorIva", true);
 
         }
 
 
 
- 
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -61,7 +75,7 @@ namespace SistemaFacturacion
             BindingSource bs = new BindingSource();
             bs.DataSource = dgvFacturas.DataSource;
             // string filtro = string.Format($"(Nombre ={s})");
-            bs.Filter = "[Factura] LIKE '%" + Dato + "%' OR Cliente LIKE '%" + Dato + "%' ";
+            bs.Filter = "[Factura] LIKE '%" + Dato + "%' OR Cliente LIKE '%" + Dato + "%' OR Estado LIKE '%"+Dato+"%' ";
             dgvFacturas.DataSource = bs;
 
         }
@@ -82,8 +96,21 @@ namespace SistemaFacturacion
             //FrmReporteFac fac = new FrmReporteFac();
             //fac.Show();
 
-            frmRptFac frm = new frmRptFac();
-            frm.Show();
+            //frmRptFac frm = new frmRptFac();
+            //frm.Show();
+
+            FrmReporteFac fac = new FrmReporteFac();
+            fac.Show();
+
+        }
+
+        private void refrescarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cargarDatos();
+        }
+
+        private void anularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

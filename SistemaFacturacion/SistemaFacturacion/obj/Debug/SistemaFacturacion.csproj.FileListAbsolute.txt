@@ -20,11 +20,10 @@ D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\Microsoft.Rep
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmConsultas.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmFactura.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Form.resources
-D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.frmRptFac.resources
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.FrmReporteFac.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Properties.Resources.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csproj.GenerateResource.Cache
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\RdlCompile.cache
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\RdlCompile.compiled
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.pdb
-D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csprojResolveAssemblyReference.cache

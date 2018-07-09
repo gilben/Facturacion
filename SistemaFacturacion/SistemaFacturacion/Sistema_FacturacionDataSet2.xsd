@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Sistema_FacturacionDataSet1" targetNamespace="http://tempuri.org/Sistema_FacturacionDataSet1.xsd" xmlns:mstns="http://tempuri.org/Sistema_FacturacionDataSet1.xsd" xmlns="http://tempuri.org/Sistema_FacturacionDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="Sistema_FacturacionDataSet2" targetNamespace="http://tempuri.org/Sistema_FacturacionDataSet2.xsd" xmlns:mstns="http://tempuri.org/Sistema_FacturacionDataSet2.xsd" xmlns="http://tempuri.org/Sistema_FacturacionDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -71,7 +71,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Sistema_FacturacionDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Sistema_FacturacionDataSet1" msprop:Generator_UserDSName="Sistema_FacturacionDataSet1">
+  <xs:element name="Sistema_FacturacionDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Sistema_FacturacionDataSet2" msprop:Generator_UserDSName="Sistema_FacturacionDataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="paConsultaReporteFactura" msprop:Generator_TableClassName="paConsultaReporteFacturaDataTable" msprop:Generator_TableVarName="tablepaConsultaReporteFactura" msprop:Generator_TablePropName="paConsultaReporteFactura" msprop:Generator_RowDeletingName="paConsultaReporteFacturaRowDeleting" msprop:Generator_RowChangingName="paConsultaReporteFacturaRowChanging" msprop:Generator_RowEvHandlerName="paConsultaReporteFacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="paConsultaReporteFacturaRowDeleted" msprop:Generator_UserTableName="paConsultaReporteFactura" msprop:Generator_RowChangedName="paConsultaReporteFacturaRowChanged" msprop:Generator_RowEvArgName="paConsultaReporteFacturaRowChangeEvent" msprop:Generator_RowClassName="paConsultaReporteFacturaRow">
@@ -266,8 +266,20 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FechaVencimiento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FechaFactura" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaFactura" msprop:Generator_ColumnPropNameInRow="FechaFactura" msprop:Generator_ColumnPropNameInTable="FechaFacturaColumn" msprop:Generator_UserColumnName="FechaFactura" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaVencimiento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaFactura" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaFactura" msprop:Generator_ColumnPropNameInRow="FechaFactura" msprop:Generator_ColumnPropNameInTable="FechaFacturaColumn" msprop:Generator_UserColumnName="FechaFactura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="CodigoInsumo" msprop:Generator_ColumnVarNameInTable="columnCodigoInsumo" msprop:Generator_ColumnPropNameInRow="CodigoInsumo" msprop:Generator_ColumnPropNameInTable="CodigoInsumoColumn" msprop:Generator_UserColumnName="CodigoInsumo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

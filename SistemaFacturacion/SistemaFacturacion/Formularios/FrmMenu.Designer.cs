@@ -30,22 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.unidadeDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.refrescarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -68,6 +58,19 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insumosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unidadeDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refrescarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -92,6 +95,8 @@
             this.toolStripMenuItem2,
             this.imprimirToolStripMenuItem,
             this.toolStripMenuItem3,
+            this.anularToolStripMenuItem,
+            this.toolStripMenuItem4,
             this.refrescarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -99,87 +104,11 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // facturasToolStripMenuItem
-            // 
-            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.insumosToolStripMenuItem1,
-            this.clientesToolStripMenuItem1,
-            this.empresaToolStripMenuItem,
-            this.resolucionesToolStripMenuItem,
-            this.vendedoresToolStripMenuItem,
-            this.parametrosToolStripMenuItem,
-            this.unidadeDeMedidaToolStripMenuItem});
-            this.facturasToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
-            this.facturasToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.lista;
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(105, 41);
-            this.facturasToolStripMenuItem.Text = "Maestros";
-            // 
-            // insumosToolStripMenuItem1
-            // 
-            this.insumosToolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.tranvia;
-            this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
-            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(230, 42);
-            this.insumosToolStripMenuItem1.Text = "Insumos";
-            // 
-            // clientesToolStripMenuItem1
-            // 
-            this.clientesToolStripMenuItem1.BackColor = System.Drawing.Color.White;
-            this.clientesToolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.avatar;
-            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(230, 42);
-            this.clientesToolStripMenuItem1.Text = "Clientes";
-            // 
-            // empresaToolStripMenuItem
-            // 
-            this.empresaToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.industria;
-            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
-            this.empresaToolStripMenuItem.Text = "Empresa";
-            // 
-            // resolucionesToolStripMenuItem
-            // 
-            this.resolucionesToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.resolucion;
-            this.resolucionesToolStripMenuItem.Name = "resolucionesToolStripMenuItem";
-            this.resolucionesToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
-            this.resolucionesToolStripMenuItem.Text = "Resoluciones";
-            // 
-            // vendedoresToolStripMenuItem
-            // 
-            this.vendedoresToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.avatar;
-            this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
-            this.vendedoresToolStripMenuItem.Text = "Vendedores";
-            // 
-            // parametrosToolStripMenuItem
-            // 
-            this.parametrosToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.parametros;
-            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
-            this.parametrosToolStripMenuItem.Text = "Parametros";
-            // 
-            // unidadeDeMedidaToolStripMenuItem
-            // 
-            this.unidadeDeMedidaToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.cartabon;
-            this.unidadeDeMedidaToolStripMenuItem.Name = "unidadeDeMedidaToolStripMenuItem";
-            this.unidadeDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
-            this.unidadeDeMedidaToolStripMenuItem.Text = "Unidade De Medida";
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(27, 41);
             this.toolStripMenuItem1.Text = "|";
-            // 
-            // insumosToolStripMenuItem
-            // 
-            this.insumosToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.insumosToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
-            this.insumosToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.recepcion__1_;
-            this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(100, 41);
-            this.insumosToolStripMenuItem.Text = "Facturar";
-            this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -187,29 +116,11 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(27, 41);
             this.toolStripMenuItem2.Text = "|";
             // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
-            this.imprimirToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.impresora;
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(107, 41);
-            this.imprimirToolStripMenuItem.Text = "Imprimir";
-            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
-            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(27, 41);
             this.toolStripMenuItem3.Text = "|";
-            // 
-            // refrescarToolStripMenuItem
-            // 
-            this.refrescarToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.refrescarToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
-            this.refrescarToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.volver_a_usar;
-            this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
-            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(108, 41);
-            this.refrescarToolStripMenuItem.Text = "Refrescar";
             // 
             // groupBox1
             // 
@@ -319,9 +230,12 @@
             // 
             // dtpFechaFinal
             // 
+            this.dtpFechaFinal.CalendarFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFinal.Location = new System.Drawing.Point(159, 40);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
-            this.dtpFechaFinal.Size = new System.Drawing.Size(120, 22);
+            this.dtpFechaFinal.Size = new System.Drawing.Size(120, 23);
             this.dtpFechaFinal.TabIndex = 5;
             // 
             // label5
@@ -336,10 +250,13 @@
             // 
             // dtpFechaInicial
             // 
+            this.dtpFechaInicial.CalendarFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicial.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtpFechaInicial.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicial.Location = new System.Drawing.Point(18, 40);
             this.dtpFechaInicial.Name = "dtpFechaInicial";
-            this.dtpFechaInicial.Size = new System.Drawing.Size(120, 22);
+            this.dtpFechaInicial.Size = new System.Drawing.Size(120, 23);
             this.dtpFechaInicial.TabIndex = 4;
             // 
             // label6
@@ -374,9 +291,10 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(18, 34);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(200, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(200, 23);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -428,26 +346,151 @@
             this.dgvFacturas.AllowUserToDeleteRows = false;
             this.dgvFacturas.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvFacturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvFacturas.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFacturas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvFacturas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFacturas.EnableHeadersVisualStyles = false;
-            this.dgvFacturas.Location = new System.Drawing.Point(9, 12);
+            this.dgvFacturas.Location = new System.Drawing.Point(0, 0);
+            this.dgvFacturas.Margin = new System.Windows.Forms.Padding(10);
             this.dgvFacturas.Name = "dgvFacturas";
-            this.dgvFacturas.RowHeadersWidth = 50;
-            this.dgvFacturas.Size = new System.Drawing.Size(1031, 596);
+            this.dgvFacturas.ReadOnly = true;
+            this.dgvFacturas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFacturas.Size = new System.Drawing.Size(1140, 640);
             this.dgvFacturas.StandardTab = true;
             this.dgvFacturas.TabIndex = 0;
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(27, 41);
+            this.toolStripMenuItem4.Text = "|";
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insumosToolStripMenuItem1,
+            this.clientesToolStripMenuItem1,
+            this.empresaToolStripMenuItem,
+            this.resolucionesToolStripMenuItem,
+            this.vendedoresToolStripMenuItem,
+            this.parametrosToolStripMenuItem,
+            this.unidadeDeMedidaToolStripMenuItem});
+            this.facturasToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
+            this.facturasToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.lista;
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(105, 41);
+            this.facturasToolStripMenuItem.Text = "Maestros";
+            // 
+            // insumosToolStripMenuItem1
+            // 
+            this.insumosToolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.tranvia;
+            this.insumosToolStripMenuItem1.Name = "insumosToolStripMenuItem1";
+            this.insumosToolStripMenuItem1.Size = new System.Drawing.Size(230, 42);
+            this.insumosToolStripMenuItem1.Text = "Insumos";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.BackColor = System.Drawing.Color.White;
+            this.clientesToolStripMenuItem1.Image = global::SistemaFacturacion.Properties.Resources.avatar;
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(230, 42);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            // 
+            // empresaToolStripMenuItem
+            // 
+            this.empresaToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.industria;
+            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
+            this.empresaToolStripMenuItem.Text = "Empresa";
+            // 
+            // resolucionesToolStripMenuItem
+            // 
+            this.resolucionesToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.resolucion;
+            this.resolucionesToolStripMenuItem.Name = "resolucionesToolStripMenuItem";
+            this.resolucionesToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
+            this.resolucionesToolStripMenuItem.Text = "Resoluciones";
+            // 
+            // vendedoresToolStripMenuItem
+            // 
+            this.vendedoresToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.avatar;
+            this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
+            this.vendedoresToolStripMenuItem.Text = "Vendedores";
+            // 
+            // parametrosToolStripMenuItem
+            // 
+            this.parametrosToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.parametros;
+            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
+            this.parametrosToolStripMenuItem.Text = "Parametros";
+            // 
+            // unidadeDeMedidaToolStripMenuItem
+            // 
+            this.unidadeDeMedidaToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.cartabon;
+            this.unidadeDeMedidaToolStripMenuItem.Name = "unidadeDeMedidaToolStripMenuItem";
+            this.unidadeDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(230, 42);
+            this.unidadeDeMedidaToolStripMenuItem.Text = "Unidade De Medida";
+            // 
+            // insumosToolStripMenuItem
+            // 
+            this.insumosToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.insumosToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
+            this.insumosToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.recepcion__1_;
+            this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(100, 41);
+            this.insumosToolStripMenuItem.Text = "Facturar";
+            this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
+            // 
+            // imprimirToolStripMenuItem
+            // 
+            this.imprimirToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
+            this.imprimirToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.impresora;
+            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
+            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(107, 41);
+            this.imprimirToolStripMenuItem.Text = "Imprimir";
+            this.imprimirToolStripMenuItem.Click += new System.EventHandler(this.imprimirToolStripMenuItem_Click);
+            // 
+            // anularToolStripMenuItem
+            // 
+            this.anularToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
+            this.anularToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.discapacitado;
+            this.anularToolStripMenuItem.Name = "anularToolStripMenuItem";
+            this.anularToolStripMenuItem.Size = new System.Drawing.Size(91, 41);
+            this.anularToolStripMenuItem.Text = "Anular";
+            this.anularToolStripMenuItem.Click += new System.EventHandler(this.anularToolStripMenuItem_Click);
+            // 
+            // refrescarToolStripMenuItem
+            // 
+            this.refrescarToolStripMenuItem.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.refrescarToolStripMenuItem.Font = new System.Drawing.Font("Scheherazade", 16F);
+            this.refrescarToolStripMenuItem.Image = global::SistemaFacturacion.Properties.Resources.volver_a_usar;
+            this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
+            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(108, 41);
+            this.refrescarToolStripMenuItem.Text = "Refrescar";
+            this.refrescarToolStripMenuItem.Click += new System.EventHandler(this.refrescarToolStripMenuItem_Click);
             // 
             // Form
             // 
@@ -525,6 +568,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem anularToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }
 
