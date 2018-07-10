@@ -98,8 +98,14 @@ namespace SistemaFacturacion
 
             //frmRptFac frm = new frmRptFac();
             //frm.Show();
+            int row = dgvFacturas.CurrentCell.RowIndex;
 
-            FrmReporteFac fac = new FrmReporteFac();
+
+         //dgvFacturas.Rows[row].Cells["Factura"].Value.ToString()
+
+                FrmReporteFac fac = new FrmReporteFac(dgvFacturas.Rows[row].Cells["Factura"].Value.ToString());
+
+
             fac.Show();
 
         }

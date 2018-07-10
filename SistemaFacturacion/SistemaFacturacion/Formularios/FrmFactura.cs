@@ -20,6 +20,8 @@ namespace SistemaFacturacion.Formularios
 
         DataTable dt;
         DataSet ds;
+        DataTable dts;
+        string FacActual;
         Clases.clsUtilidades Utilidades = new Clases.clsUtilidades();
         Clases.ProcesaDatos pd = new Clases.ProcesaDatos();
 
@@ -295,10 +297,11 @@ namespace SistemaFacturacion.Formularios
 
                 }
 
+                FacActual = txtNumFac.Text;
                 Descuento = double.Parse(txtDescuento.Text);
 
                 ds.Tables[4].Columns.Remove("Producto/servicio");
-                DataTable dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(),cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Descuento, dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
+               dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(),cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Descuento, dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
 
                 if (dts.Rows[0][0].ToString()=="ok")
                 {
@@ -441,7 +444,20 @@ namespace SistemaFacturacion.Formularios
             }
         }
 
-   
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            GuardarDocumento();
+
+           if( dts.Rows[0][0].ToString() == "ok")
+            {
+                FrmReporteFac fac = new FrmReporteFac(FacActual);
+                fac.Show();
+            }
+
+         
+           
+        }
     }
 }
 

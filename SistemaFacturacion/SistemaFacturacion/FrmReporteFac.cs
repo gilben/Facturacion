@@ -12,15 +12,22 @@ namespace SistemaFacturacion
 {
     public partial class FrmReporteFac : System.Windows.Forms.Form
     {
+        string documento;
         public FrmReporteFac()
         {
+            InitializeComponent();
+        }
+
+        public FrmReporteFac(string Documento)
+        {
+             documento = Documento;
             InitializeComponent();
         }
 
         private void FrmReporteFac_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'Sistema_FacturacionDataSet.paConsultaReporteFactura' table. You can move, or remove it, as needed.
-            this.paConsultaReporteFacturaTableAdapter.Fill(this.Sistema_FacturacionDataSet.paConsultaReporteFactura ,"2012");
+            this.paConsultaReporteFacturaTableAdapter.Fill(this.Sistema_FacturacionDataSet.paConsultaReporteFactura ,documento);
 
             this.rvFactura.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptFactura.rdlc";
             this.rvFactura.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
