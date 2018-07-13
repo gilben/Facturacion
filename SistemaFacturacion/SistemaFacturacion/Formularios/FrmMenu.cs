@@ -58,11 +58,12 @@ namespace SistemaFacturacion
             dgvFacturas.DataSource = ds.Tables[0];
             ut.AlinearContenidoColumna(dgvFacturas);
             // ut.FormatearGrid(dgvFacturas, "Iva",true);
-            ut.FormatearGrid(dgvFacturas, "SubTotal", true);
-            ut.FormatearGrid(dgvFacturas, "BaseGravada", true);
-            ut.FormatearGrid(dgvFacturas, "Descuento", true);
-            ut.FormatearGrid(dgvFacturas, "Total", true);
-            ut.FormatearGrid(dgvFacturas, "ValorIva", true);
+            ut.FormatearGrid(dgvFacturas, "SubTotal", "C");
+            ut.FormatearGrid(dgvFacturas, "BaseGravada", "C");
+            ut.FormatearGrid(dgvFacturas, "PorcDescuento", "P");
+            ut.FormatearGrid(dgvFacturas, "VlrDescuento", "C");
+            ut.FormatearGrid(dgvFacturas, "Total", "C");
+            ut.FormatearGrid(dgvFacturas, "ValorIva", "C");
 
         }
 

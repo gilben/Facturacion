@@ -15,6 +15,7 @@ C:\Users\gcastro\OneDrive - Instituto Tecnológico Metropolitano\Sistemafacturac
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.exe.config
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.exe
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\SistemaFacturacion.pdb
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\aa-DJ\SistemaFacturacion.resources.dll
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmConsultas.resources
@@ -22,8 +23,11 @@ D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFactur
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Form.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.FrmReporteFac.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Properties.Resources.resources
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.FrmReporteFac.aa-DJ.resources
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csproj.GenerateResource.Cache
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\RdlCompile.cache
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\RdlCompile.compiled
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\aa-DJ\SistemaFacturacion.resources.dll
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.pdb
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csprojResolveAssemblyReference.cache

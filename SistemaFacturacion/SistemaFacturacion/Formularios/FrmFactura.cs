@@ -70,7 +70,7 @@ namespace SistemaFacturacion.Formularios
             dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
-            Utilidades.FormatearGrid(dgvInsumos, "Precio",true);
+            Utilidades.FormatearGrid(dgvInsumos, "Precio","C");
 
             cbbCompania.DataSource = ds.Tables[5];
             cbbCompania.DisplayMember = "RazonSocial";
@@ -111,7 +111,7 @@ namespace SistemaFacturacion.Formularios
             dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
             //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
-            Utilidades.FormatearGrid(dgvInsumos, "Precio",true);
+            Utilidades.FormatearGrid(dgvInsumos, "Precio","C");
             Utilidades.AlinearContenidoColumna(dgvInsumos);
 
             //DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
@@ -209,8 +209,8 @@ namespace SistemaFacturacion.Formularios
 
 
             double Bruto = Convert.ToDouble(dgvInsumos.Rows[row].Cells["Cantidad"].Value) * Convert.ToDouble(dgvInsumos.Rows[row].Cells["Precio"].Value);
-            double VlrIva = (Bruto * Convert.ToDouble(dgvInsumos.Rows[row].Cells["Iva"].Value)) / 100;
-            double Total = Bruto + VlrIva;
+            double VlrIva = (Bruto* Convert.ToDouble(dgvInsumos.Rows[row].Cells["Iva"].Value)) / 100;
+            double Total = Bruto+VlrIva;
             double VlrUnitario = Convert.ToDouble(dgvInsumos.Rows[row].Cells["Precio"].Value);//.ToString("c1", System.Globalization.CultureInfo.GetCultureInfo("en-us")));
             int Iva = Convert.ToInt16(dgvInsumos.Rows[row].Cells["Iva"].Value);
 
@@ -266,7 +266,6 @@ namespace SistemaFacturacion.Formularios
             if(ValidarControles())
 
             {
-
                 return;
             }
             GuardarDocumento();
@@ -282,23 +281,28 @@ namespace SistemaFacturacion.Formularios
                 return;
             }
 
-            double Iva = 0, Subtotal = 0, Total = 0, Descuento = 0, BaseGravable = 0;
+            double Iva = 0, Subtotal = 0, Total = 0, Descuento = 0, BaseGravable = 0,SubtotalReal=0,sub=0;
             try
             {
+                Descuento = double.Parse(txtDescuento.Text);
                 foreach (DataGridViewRow row in dgvInsumosFacturar.Rows)
                 {
-                    Iva += double.Parse(row.Cells["VlrIva"].Value.ToString());
+                    SubtotalReal = 0;
+                    SubtotalReal += (double.Parse(row.Cells["VlrBruto"].Value.ToString()) - (double.Parse(row.Cells["VlrBruto"].Value.ToString())*Descuento /100));
+                    sub += SubtotalReal;
+                    Iva += SubtotalReal * int.Parse(row.Cells["Iva"].Value.ToString()) / 100;                                                          //             double.Parse(row.Cells["VlrIva"].Value.ToString());
                     Subtotal += double.Parse(row.Cells["VlrBruto"].Value.ToString());
-                    Total += double.Parse(row.Cells["VlrTotal"].Value.ToString());
+                   
+                                        //double.Parse(row.Cells["VlrTotal"].Value.ToString());
                     if (int.Parse(row.Cells["Iva"].Value.ToString()) != 0)
                     {
                         BaseGravable += double.Parse(row.Cells["VlrBruto"].Value.ToString());
                     }
 
                 }
-
+                Total += sub + Iva;
                 FacActual = txtNumFac.Text;
-                Descuento = double.Parse(txtDescuento.Text);
+               
 
                 ds.Tables[4].Columns.Remove("Producto/servicio");
                dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(),cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Descuento, dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
@@ -341,6 +345,7 @@ namespace SistemaFacturacion.Formularios
             cbbSede.ValueMember = "idDireccion";
             cbbSede.DisplayMember = "NombreSede";
 
+           
 
 
         }
@@ -446,6 +451,11 @@ namespace SistemaFacturacion.Formularios
 
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (ValidarControles())
+
+            {
+                return;
+            }
 
             GuardarDocumento();
 
@@ -453,11 +463,14 @@ namespace SistemaFacturacion.Formularios
             {
                 FrmReporteFac fac = new FrmReporteFac(FacActual);
                 fac.Show();
+                
             }
 
          
            
         }
+
+      
     }
 }
 

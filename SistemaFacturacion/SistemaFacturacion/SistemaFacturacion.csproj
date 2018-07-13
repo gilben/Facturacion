@@ -115,6 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Sistema_FacturacionDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_FacturacionDataSet6.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\FrmConsultas.resx">
       <DependentUpon>FrmConsultas.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteFac.aa-DJ.resx">
+      <DependentUpon>FrmReporteFac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteFac.resx">
       <DependentUpon>FrmReporteFac.cs</DependentUpon>
@@ -212,6 +220,17 @@
     </None>
     <None Include="Sistema_FacturacionDataSet5.xss">
       <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet6.xsc">
+      <DependentUpon>Sistema_FacturacionDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_FacturacionDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_FacturacionDataSet6.xss">
+      <DependentUpon>Sistema_FacturacionDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

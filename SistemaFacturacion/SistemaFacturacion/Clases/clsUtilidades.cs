@@ -12,17 +12,21 @@ namespace SistemaFacturacion.Clases
     public class clsUtilidades
     {
         
-        public void FormatearGrid(DataGridView dgv, string columna, Boolean  parametro)
+        public void FormatearGrid(DataGridView dgv, string columna, string  parametro)
         {
-            if(parametro=true)
+            if(parametro=="C")
             {
                 dgv.Columns[columna].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("en-us");
                 dgv.Columns[columna].DefaultCellStyle.Format = string.Format("C");
             }
-            else
+            else if(parametro=="N")
             {
                 dgv.Columns[columna].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("en-us");
                 dgv.Columns[columna].DefaultCellStyle.Format = string.Format("N");
+            }else
+            {
+                dgv.Columns[columna].DefaultCellStyle.FormatProvider = System.Globalization.CultureInfo.GetCultureInfo("en-us");
+                dgv.Columns[columna].DefaultCellStyle.Format = string.Format("P0");
             }
 
       

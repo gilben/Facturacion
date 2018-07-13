@@ -29,36 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporteFac));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvFactura = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Sistema_FacturacionDataSet = new SistemaFacturacion.Sistema_FacturacionDataSet();
             this.paConsultaReporteFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Sistema_FacturacionDataSet = new SistemaFacturacion.Sistema_FacturacionDataSet();
+            this.rvFactura = new Microsoft.Reporting.WinForms.ReportViewer();
             this.paConsultaReporteFacturaTableAdapter = new SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters.paConsultaReporteFacturaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.Sistema_FacturacionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paConsultaReporteFacturaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sistema_FacturacionDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // rvFactura
+            // paConsultaReporteFacturaBindingSource
             // 
-            this.rvFactura.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.paConsultaReporteFacturaBindingSource;
-            this.rvFactura.LocalReport.DataSources.Add(reportDataSource1);
-            this.rvFactura.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptFactura.rdlc";
-            this.rvFactura.Location = new System.Drawing.Point(0, 0);
-            this.rvFactura.Name = "rvFactura";
-            this.rvFactura.Size = new System.Drawing.Size(564, 360);
-            this.rvFactura.TabIndex = 0;
+            this.paConsultaReporteFacturaBindingSource.DataMember = "paConsultaReporteFactura";
+            this.paConsultaReporteFacturaBindingSource.DataSource = this.Sistema_FacturacionDataSet;
             // 
             // Sistema_FacturacionDataSet
             // 
             this.Sistema_FacturacionDataSet.DataSetName = "Sistema_FacturacionDataSet";
             this.Sistema_FacturacionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // paConsultaReporteFacturaBindingSource
+            // rvFactura
             // 
-            this.paConsultaReporteFacturaBindingSource.DataMember = "paConsultaReporteFactura";
-            this.paConsultaReporteFacturaBindingSource.DataSource = this.Sistema_FacturacionDataSet;
+            resources.ApplyResources(this.rvFactura, "rvFactura");
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.paConsultaReporteFacturaBindingSource;
+            this.rvFactura.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvFactura.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptFactura.rdlc";
+            this.rvFactura.Name = "rvFactura";
             // 
             // paConsultaReporteFacturaTableAdapter
             // 
@@ -66,16 +64,14 @@
             // 
             // FrmReporteFac
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 360);
             this.Controls.Add(this.rvFactura);
             this.Name = "FrmReporteFac";
-            this.Text = "FrmReporteFac";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReporteFac_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Sistema_FacturacionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paConsultaReporteFacturaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sistema_FacturacionDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

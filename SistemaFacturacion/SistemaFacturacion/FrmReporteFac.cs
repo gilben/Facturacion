@@ -33,9 +33,11 @@ namespace SistemaFacturacion
             this.rvFactura.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.rvFactura.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
             this.rvFactura.ZoomPercent = 100;
+
         
 
             this.rvFactura.RefreshReport();
+            
         }
     }
 }
