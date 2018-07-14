@@ -1084,13 +1084,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.7125cm</Width>
+              <Width>2.08267cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.2619cm</Width>
+              <Width>1.50176cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.44964cm</Width>
+              <Width>2.79738cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1126,7 +1126,7 @@
                           <Style>Solid</Style>
                           <Width>0.5pt</Width>
                         </LeftBorder>
-                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>1pt</PaddingTop>
                         <PaddingBottom>1pt</PaddingBottom>
@@ -1208,7 +1208,7 @@
                           <Style>Solid</Style>
                           <Width>0.5pt</Width>
                         </LeftBorder>
-                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>1pt</PaddingTop>
                         <PaddingBottom>1pt</PaddingBottom>
@@ -1290,7 +1290,7 @@
                           <Style>Solid</Style>
                           <Width>0.5pt</Width>
                         </LeftBorder>
-                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>1pt</PaddingTop>
                         <PaddingBottom>1pt</PaddingBottom>
@@ -1403,7 +1403,7 @@
                           <Width>0.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>Gainsboro</BackgroundColor>
-                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>1pt</PaddingTop>
                         <PaddingBottom>1pt</PaddingBottom>
@@ -1486,14 +1486,13 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </LeftBorder>
-                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>1pt</PaddingTop>
                         <PaddingBottom>1pt</PaddingBottom>
                       </Style>
                     </Textbox>
                     <ColSpan>2</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1556,9 +1555,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <Top>6.91059cm</Top>
-        <Left>14.24902cm</Left>
-        <Height>1.81291cm</Height>
-        <Width>5.42404cm</Width>
+        <Left>13.29132cm</Left>
+        <Height>1.81292cm</Height>
+        <Width>6.38181cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -2546,7 +2545,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>13.72148cm</Width>
+              <Width>12.76378cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -2611,20 +2610,16 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BottomBorder>
-                          <Color>Gray</Color>
-                          <Style>Solid</Style>
-                          <Width>0.5pt</Width>
-                        </BottomBorder>
                         <LeftBorder>
-                          <Color>Gray</Color>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
-                          <Width>0.5pt</Width>
+                          <Width>1pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -2645,7 +2640,7 @@
         <Top>6.91059cm</Top>
         <Left>0.52754cm</Left>
         <Height>2.21861cm</Height>
-        <Width>13.72148cm</Width>
+        <Width>12.76378cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>

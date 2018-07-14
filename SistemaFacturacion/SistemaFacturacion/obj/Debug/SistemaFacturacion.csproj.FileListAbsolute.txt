@@ -31,3 +31,4 @@ D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\aa-DJ\Sistema
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.pdb
 D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csprojResolveAssemblyReference.cache
+D:\ProyectoFactura\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmMenuPrincipal.resources

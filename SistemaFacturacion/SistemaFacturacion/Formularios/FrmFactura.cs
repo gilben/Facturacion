@@ -150,6 +150,7 @@ namespace SistemaFacturacion.Formularios
             //dgvInsumosFacturar.Columns.Add("VlrIva", "VlrIva");
             //dgvInsumosFacturar.Columns.Add("VlrBruto", "VlrBruto");
             //dgvInsumosFacturar.Columns.Add("VlrTotal", "VlrTotal");
+         
 
 
         }
@@ -281,31 +282,61 @@ namespace SistemaFacturacion.Formularios
                 return;
             }
 
-            double Iva = 0, Subtotal = 0, Total = 0, Descuento = 0, BaseGravable = 0,SubtotalReal=0,sub=0;
+             Decimal Iva = 0, Subtotal = 0, Total = 0, Descuento = 0, BaseGravable = 0,SubtotalReal=0,sub=0;
+            
             try
             {
-                Descuento = double.Parse(txtDescuento.Text);
+               // Descuento = double.Parse(txtDescuento.Text);
+                if (txtDescuento.Text.Contains("%"))
+                {
+
+                    Descuento = Decimal.Parse(txtDescuento.Text.Replace("%", ""));
+                
+
+                }
+                else
+                {
+                    Decimal Subdescuento = 0;
+                    foreach (DataGridViewRow row in dgvInsumosFacturar.Rows)
+                    {
+
+                        Subdescuento += (Decimal.Parse(row.Cells["VlrBruto"].Value.ToString()));
+                    
+
+             
+
+                    }
+                    Descuento =(Decimal.Parse(txtDescuento.Text)/ Subdescuento)*100;
+                    
+                }
+                if (Descuento > 100)
+                {
+                    MessageBox.Show("El porcentaje de descuento no puede superar el 100% ", "Sistema de facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    return;
+                }
+
                 foreach (DataGridViewRow row in dgvInsumosFacturar.Rows)
                 {
                     SubtotalReal = 0;
-                    SubtotalReal += (double.Parse(row.Cells["VlrBruto"].Value.ToString()) - (double.Parse(row.Cells["VlrBruto"].Value.ToString())*Descuento /100));
+                    SubtotalReal += (Decimal.Parse(row.Cells["VlrBruto"].Value.ToString()) - (Decimal.Parse(row.Cells["VlrBruto"].Value.ToString())*Descuento /100));
                     sub += SubtotalReal;
                     Iva += SubtotalReal * int.Parse(row.Cells["Iva"].Value.ToString()) / 100;                                                          //             double.Parse(row.Cells["VlrIva"].Value.ToString());
-                    Subtotal += double.Parse(row.Cells["VlrBruto"].Value.ToString());
+                    Subtotal += Decimal.Parse(row.Cells["VlrBruto"].Value.ToString());
                    
                                         //double.Parse(row.Cells["VlrTotal"].Value.ToString());
                     if (int.Parse(row.Cells["Iva"].Value.ToString()) != 0)
                     {
-                        BaseGravable += double.Parse(row.Cells["VlrBruto"].Value.ToString());
+                        BaseGravable += Decimal.Parse(row.Cells["VlrBruto"].Value.ToString());
                     }
 
                 }
                 Total += sub + Iva;
                 FacActual = txtNumFac.Text;
-               
+                BaseGravable = BaseGravable-(BaseGravable * (Descuento / 100));
 
                 ds.Tables[4].Columns.Remove("Producto/servicio");
-               dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(),cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Descuento, dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
+               dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(),cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable,Math.Round(Descuento,27), dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
 
                 if (dts.Rows[0][0].ToString()=="ok")
                 {
@@ -352,6 +383,12 @@ namespace SistemaFacturacion.Formularios
 
          private bool ValidarControles()
         {
+            if (dgvInsumosFacturar.RowCount==0)
+            {
+                MessageBox.Show("No hay datos para imprimir", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
+                return true;
+            }
             if(cbbCliente.Text== "Selecione un cliente")
             {
                 MessageBox.Show("Debe Seleccionar un cliente", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -371,13 +408,21 @@ namespace SistemaFacturacion.Formularios
 
 
             long Dft = 0;
-
-            if (!long.TryParse(txtDescuento.Text, out Dft))
-            {
-                MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (txtDescuento.Text.Length < 1)
                 txtDescuento.Text = "0";
-                txtDescuento.SelectAll();
-                return;
+
+            if (txtDescuento.Text.Substring(txtDescuento.Text.Length - 1) != "%")
+            {
+
+
+                if (!long.TryParse(txtDescuento.Text, out Dft))
+                {
+                    MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtDescuento.Text = "0";
+                    txtDescuento.SelectAll();
+                    return;
+
+                }
 
             }
         }
@@ -454,14 +499,21 @@ namespace SistemaFacturacion.Formularios
             if (ValidarControles())
 
             {
+                dts = null;
                 return;
             }
 
             GuardarDocumento();
 
+            if(dts==null)
+            {
+                return;
+            }
+
            if( dts.Rows[0][0].ToString() == "ok")
             {
                 FrmReporteFac fac = new FrmReporteFac(FacActual);
+                CargarCombos();
                 fac.Show();
                 
             }
