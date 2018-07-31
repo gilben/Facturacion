@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SistemaFacturacion")]
+[assembly: AssemblyTitle("Sistema Facturacion Reverdecer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SistemaFacturacion")]
+[assembly: AssemblyCompany("Reverdecer S.A.S")]
+[assembly: AssemblyProduct("SistemaFacturacionRevercer")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8c2702f7-cdc5-443c-8705-7f155024e7dd")]
+[assembly: Guid("282c27ff-2245-4a78-840c-65fc64d6ee9d")]
 
 // Version information for an assembly consists of the following four values:
 //

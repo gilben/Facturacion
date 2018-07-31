@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 
 using System.Windows.Forms;
+using SistemaFacturacion.Formularios;
 
 namespace SistemaFacturacion.Clases
 {
     public class clsUtilidades
     {
-        
+
         public void FormatearGrid(DataGridView dgv, string columna, string  parametro)
         {
             if(parametro=="C")
@@ -56,7 +57,7 @@ namespace SistemaFacturacion.Clases
             }
 
 
-
+      
             
 
             //if (!long.TryParse(txt.Text, out Dft))
@@ -72,10 +73,68 @@ namespace SistemaFacturacion.Clases
 
             //dgv.Columns[columna ].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
+        public void ValidaNumeros(TextBox texbox, string ParametroExcluir)
+        {
+
+            long Dft = 0;
+            if (texbox.Text.Length < 1)
+                texbox.Text = "0";
+
+            if (texbox.Text.Substring(texbox.Text.Length - 1) != ParametroExcluir)
+            {
+
+
+                if (!long.TryParse(texbox.Text, out Dft))
+                {
+                    MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    texbox.Text = "0";
+                    texbox.SelectAll();
+                    return;
+
+                }
+
+            }
+        }
+        public void ValidaNumeros(TextBox texbox)
+        {
+
+            long Dft = 0;
+            if (texbox.Text.Length < 1)
+                texbox.Text = "0";
+
+            
+
+
+                if (!long.TryParse(texbox.Text, out Dft))
+                {
+                    MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    texbox.Text = "0";
+                    texbox.SelectAll();
+                    return;
+
+                }
+
+            
+        }
 
         public void AlinearContenidoColumnaLeft(DataGridView dgv, string columna)
         {
             dgv.Columns[columna].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+        }
+
+        public void ValidarForms(Form frm1)
+        {
+
+
+        
+
+            foreach(Form frm in Application.OpenForms)
+            {
+                if (frm.GetType() !=null)
+                {
+                    frm1.BringToFront();
+                }
+            }
         }
     }
 }

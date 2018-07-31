@@ -18,16 +18,14 @@ namespace SistemaFacturacion.Clases
             
             try
             {
-                
-
-
-                   DataTable data = new DataTable();
+   
+                 DataTable data = new DataTable();
                 //SqlConnection con = new SqlConnection(Clases.clsConexion.Connection);
                 SqlCommand cmd = new SqlCommand(strProcedimiento, Clases.clsConexion.Connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlParameter sqlParamIdDocumento = cmd.Parameters.Add("@NumDocumento", valores[0]);
                 SqlParameter sqlParamIdCompania = cmd.Parameters.Add("@CodVendedor", valores[1]);
-                SqlParameter sqlParamNumeroDocumento = cmd.Parameters.Add("@NitCliente", valores[2]);
+                SqlParameter sqlParamNumeroDocumento = cmd.Parameters.Add("@IdCliente", valores[2]);
                 SqlParameter sqlParamDirCliente = cmd.Parameters.Add("@IdDireccionCliente", valores[3]);
                 SqlParameter sqlParamIdParametrosDocumentoContable = cmd.Parameters.Add("@Resolucion", valores[4]);
                 SqlParameter sqlParamIdTipoDocumentoContable = cmd.Parameters.Add("@TipoDocumento", valores[5]);
@@ -62,9 +60,103 @@ namespace SistemaFacturacion.Clases
 
 
     }
-        public DataSet ConsultasCombos(string ProcedimientoAlmacenado, string Parametro)
+
+
+
+        public static DataTable ProcesarClientes(string strProcedimiento, object[] valores, DataTable dtDirecciones)
         {
-            return AD.ExecuteDataset(Clases.clsConexion.Connection, ProcedimientoAlmacenado, Parametro);
+
+            try
+            {
+
+                DataTable data = new DataTable();
+                //SqlConnection con = new SqlConnection(Clases.clsConexion.Connection);
+                SqlCommand cmd = new SqlCommand(strProcedimiento, Clases.clsConexion.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter sqlParamId = cmd.Parameters.Add("@IdCliente", valores[0]);
+                SqlParameter sqlParamNit = cmd.Parameters.Add("@Nit", valores[1]);
+                SqlParameter sqlParamRazonSocial = cmd.Parameters.Add("@RazonSocial", valores[2]);
+                SqlParameter sqlParamNombre = cmd.Parameters.Add("@Nombre", valores[3]);
+                SqlParameter sqlParamEmail = cmd.Parameters.Add("@Email", valores[4]);
+                SqlParameter sqlParamContacto = cmd.Parameters.Add("@Contacto", valores[5]);
+                SqlParameter sqlParamTel1 = cmd.Parameters.Add("@Telefono1", valores[6]);
+                SqlParameter sqlParamTel2= cmd.Parameters.Add("@Telefono2", valores[7]);
+                SqlParameter sqlParamCel = cmd.Parameters.Add("@Celular", valores[7]);
+                SqlParameter sqlParamEstado = cmd.Parameters.Add("@Estado", valores[9]);
+
+
+                SqlParameter sqlParamDetalle = cmd.Parameters.AddWithValue("@Direccion", dtDirecciones);
+
+                sqlParamDetalle.SqlDbType = SqlDbType.Structured;
+
+                SqlDataAdapter datap = new SqlDataAdapter(cmd);
+                datap.Fill(data);
+                return data;
+
+
+
+            }
+            catch (Exception Error)
+            {
+                throw Error;
+                Clases.clsConexion.Connection.Close();
+            }
+
+
+        }
+
+
+        public static DataTable ProcesarInsumos(string strProcedimiento, object[] valores)
+        {
+
+            try
+            {
+
+                DataTable data = new DataTable();
+                //SqlConnection con = new SqlConnection(Clases.clsConexion.Connection);
+                SqlCommand cmd = new SqlCommand(strProcedimiento, Clases.clsConexion.Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter sqlParamIdDocumento = cmd.Parameters.Add("@codigoInsumo", valores[0]);
+                SqlParameter sqlParamIdCompania = cmd.Parameters.Add("@NombreInsumo", valores[1]);
+                SqlParameter sqlParamNumeroDocumento = cmd.Parameters.Add("@CantidadActual", valores[2]);
+                SqlParameter sqlParamDirCliente = cmd.Parameters.Add("@IdUnidadMedida", valores[3]);
+                SqlParameter sqlParamIdParametrosDocumentoContable = cmd.Parameters.Add("@Precio", valores[4]);
+                SqlParameter sqlParamIdTipoDocumentoContable = cmd.Parameters.Add("@Iva", valores[5]);
+                SqlParameter sqlParamIdTipoFactura = cmd.Parameters.Add("@IdTipoInsumo", valores[6]);
+               
+                SqlDataAdapter datap = new SqlDataAdapter(cmd);
+                datap.Fill(data);
+                return data;
+
+
+
+            }
+            catch (Exception Error)
+            {
+                throw Error;
+                Clases.clsConexion.Connection.Close();
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+        public DataSet ConsultasCombos(string ProcedimientoAlmacenado, object[] Parametros)
+        {
+            return AD.ExecuteDataset(clsConexion.Connection, ProcedimientoAlmacenado, Parametros);
+        }
+
+        public DataSet ConsultasCombos(string ProcedimientoAlmacenado, string Parametros)
+        {
+            return AD.ExecuteDataset(clsConexion.Connection, ProcedimientoAlmacenado, Parametros);
         }
 
         public DataSet ConsultasCombos(string ProcedimientoAlmacenado)

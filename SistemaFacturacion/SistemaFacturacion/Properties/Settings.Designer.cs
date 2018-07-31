@@ -33,5 +33,16 @@ namespace SistemaFacturacion.Properties {
                 return ((string)(this["Sistema_FacturacionConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\SQLEXPRESS;Initial Catalog=Sistema_Facturacion;Persist Securi" +
+            "ty Info=True;User ID=sa")]
+        public string Sistema_FacturacionConnectionString1 {
+            get {
+                return ((string)(this["Sistema_FacturacionConnectionString1"]));
+            }
+        }
     }
 }

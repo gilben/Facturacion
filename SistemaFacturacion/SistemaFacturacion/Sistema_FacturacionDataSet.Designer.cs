@@ -331,6 +331,8 @@ namespace SistemaFacturacion {
             
             private global::System.Data.DataColumn columnBaseGravada;
             
+            private global::System.Data.DataColumn columnPorcentajeDescuento;
+            
             private global::System.Data.DataColumn columnDescuento;
             
             private global::System.Data.DataColumn columnFechaVencimiento;
@@ -360,6 +362,20 @@ namespace SistemaFacturacion {
             private global::System.Data.DataColumn columnTipoCta;
             
             private global::System.Data.DataColumn columnNroCuenta;
+            
+            private global::System.Data.DataColumn columnLinea1;
+            
+            private global::System.Data.DataColumn columnLinea2;
+            
+            private global::System.Data.DataColumn columnLinea3;
+            
+            private global::System.Data.DataColumn columnLinea4;
+            
+            private global::System.Data.DataColumn columnLinea5;
+            
+            private global::System.Data.DataColumn columnLinea6;
+            
+            private global::System.Data.DataColumn columnDian;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -604,6 +620,14 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PorcentajeDescuentoColumn {
+                get {
+                    return this.columnPorcentajeDescuento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DescuentoColumn {
                 get {
                     return this.columnDescuento;
@@ -724,6 +748,62 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Linea1Column {
+                get {
+                    return this.columnLinea1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Linea2Column {
+                get {
+                    return this.columnLinea2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Linea3Column {
+                get {
+                    return this.columnLinea3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Linea4Column {
+                get {
+                    return this.columnLinea4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Linea5Column {
+                get {
+                    return this.columnLinea5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Linea6Column {
+                get {
+                    return this.columnLinea6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DianColumn {
+                get {
+                    return this.columnDian;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -786,9 +866,10 @@ namespace SistemaFacturacion {
                         string Subtotal, 
                         string Total, 
                         string BaseGravada, 
+                        string PorcentajeDescuento, 
                         string Descuento, 
-                        System.DateTime FechaVencimiento, 
-                        System.DateTime FechaFactura, 
+                        string FechaVencimiento, 
+                        string FechaFactura, 
                         string CodigoInsumo, 
                         string Descripcion, 
                         decimal Cantidad, 
@@ -800,7 +881,14 @@ namespace SistemaFacturacion {
                         string Total1, 
                         string Banco, 
                         string TipoCta, 
-                        string NroCuenta) {
+                        string NroCuenta, 
+                        string Linea1, 
+                        string Linea2, 
+                        string Linea3, 
+                        string Linea4, 
+                        string Linea5, 
+                        string Linea6, 
+                        string Dian) {
                 paConsultaReporteFacturaRow rowpaConsultaReporteFacturaRow = ((paConsultaReporteFacturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NIT,
@@ -829,6 +917,7 @@ namespace SistemaFacturacion {
                         Subtotal,
                         Total,
                         BaseGravada,
+                        PorcentajeDescuento,
                         Descuento,
                         FechaVencimiento,
                         FechaFactura,
@@ -843,7 +932,14 @@ namespace SistemaFacturacion {
                         Total1,
                         Banco,
                         TipoCta,
-                        NroCuenta};
+                        NroCuenta,
+                        Linea1,
+                        Linea2,
+                        Linea3,
+                        Linea4,
+                        Linea5,
+                        Linea6,
+                        Dian};
                 rowpaConsultaReporteFacturaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpaConsultaReporteFacturaRow);
                 return rowpaConsultaReporteFacturaRow;
@@ -892,6 +988,7 @@ namespace SistemaFacturacion {
                 this.columnSubtotal = base.Columns["Subtotal"];
                 this.columnTotal = base.Columns["Total"];
                 this.columnBaseGravada = base.Columns["BaseGravada"];
+                this.columnPorcentajeDescuento = base.Columns["PorcentajeDescuento"];
                 this.columnDescuento = base.Columns["Descuento"];
                 this.columnFechaVencimiento = base.Columns["FechaVencimiento"];
                 this.columnFechaFactura = base.Columns["FechaFactura"];
@@ -907,6 +1004,13 @@ namespace SistemaFacturacion {
                 this.columnBanco = base.Columns["Banco"];
                 this.columnTipoCta = base.Columns["TipoCta"];
                 this.columnNroCuenta = base.Columns["NroCuenta"];
+                this.columnLinea1 = base.Columns["Linea1"];
+                this.columnLinea2 = base.Columns["Linea2"];
+                this.columnLinea3 = base.Columns["Linea3"];
+                this.columnLinea4 = base.Columns["Linea4"];
+                this.columnLinea5 = base.Columns["Linea5"];
+                this.columnLinea6 = base.Columns["Linea6"];
+                this.columnDian = base.Columns["Dian"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -964,11 +1068,13 @@ namespace SistemaFacturacion {
                 base.Columns.Add(this.columnTotal);
                 this.columnBaseGravada = new global::System.Data.DataColumn("BaseGravada", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBaseGravada);
+                this.columnPorcentajeDescuento = new global::System.Data.DataColumn("PorcentajeDescuento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentajeDescuento);
                 this.columnDescuento = new global::System.Data.DataColumn("Descuento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescuento);
-                this.columnFechaVencimiento = new global::System.Data.DataColumn("FechaVencimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnFechaVencimiento = new global::System.Data.DataColumn("FechaVencimiento", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaVencimiento);
-                this.columnFechaFactura = new global::System.Data.DataColumn("FechaFactura", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnFechaFactura = new global::System.Data.DataColumn("FechaFactura", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFechaFactura);
                 this.columnCodigoInsumo = new global::System.Data.DataColumn("CodigoInsumo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigoInsumo);
@@ -994,11 +1100,27 @@ namespace SistemaFacturacion {
                 base.Columns.Add(this.columnTipoCta);
                 this.columnNroCuenta = new global::System.Data.DataColumn("NroCuenta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNroCuenta);
+                this.columnLinea1 = new global::System.Data.DataColumn("Linea1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea1);
+                this.columnLinea2 = new global::System.Data.DataColumn("Linea2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea2);
+                this.columnLinea3 = new global::System.Data.DataColumn("Linea3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea3);
+                this.columnLinea4 = new global::System.Data.DataColumn("Linea4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea4);
+                this.columnLinea5 = new global::System.Data.DataColumn("Linea5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea5);
+                this.columnLinea6 = new global::System.Data.DataColumn("Linea6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLinea6);
+                this.columnDian = new global::System.Data.DataColumn("Dian", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDian);
                 this.columnNIT.AllowDBNull = false;
                 this.columnNIT.MaxLength = 50;
                 this.columnDireccion.MaxLength = 100;
-                this.columnPXB.MaxLength = 50;
-                this.columnCelular.MaxLength = 50;
+                this.columnPXB.ReadOnly = true;
+                this.columnPXB.MaxLength = 55;
+                this.columnCelular.ReadOnly = true;
+                this.columnCelular.MaxLength = 55;
                 this.columnEmail.MaxLength = 100;
                 this.columnSItioWeb.MaxLength = 50;
                 this.columnPais.MaxLength = 50;
@@ -1030,10 +1152,14 @@ namespace SistemaFacturacion {
                 this.columnTotal.MaxLength = 4000;
                 this.columnBaseGravada.ReadOnly = true;
                 this.columnBaseGravada.MaxLength = 4000;
+                this.columnPorcentajeDescuento.ReadOnly = true;
+                this.columnPorcentajeDescuento.MaxLength = 4000;
                 this.columnDescuento.ReadOnly = true;
                 this.columnDescuento.MaxLength = 4000;
-                this.columnFechaVencimiento.AllowDBNull = false;
-                this.columnFechaFactura.AllowDBNull = false;
+                this.columnFechaVencimiento.ReadOnly = true;
+                this.columnFechaVencimiento.MaxLength = 30;
+                this.columnFechaFactura.ReadOnly = true;
+                this.columnFechaFactura.MaxLength = 30;
                 this.columnCodigoInsumo.AllowDBNull = false;
                 this.columnCodigoInsumo.MaxLength = 20;
                 this.columnDescripcion.AllowDBNull = false;
@@ -1053,6 +1179,14 @@ namespace SistemaFacturacion {
                 this.columnBanco.MaxLength = 50;
                 this.columnTipoCta.MaxLength = 20;
                 this.columnNroCuenta.MaxLength = 50;
+                this.columnLinea1.MaxLength = 50;
+                this.columnLinea2.MaxLength = 50;
+                this.columnLinea3.MaxLength = 50;
+                this.columnLinea4.MaxLength = 50;
+                this.columnLinea5.MaxLength = 50;
+                this.columnLinea6.MaxLength = 50;
+                this.columnDian.ReadOnly = true;
+                this.columnDian.MaxLength = 243;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1593,6 +1727,23 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PorcentajeDescuento {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.PorcentajeDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PorcentajeDescuento\' in table \'paConsultaReporteFactura\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.PorcentajeDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Descuento {
                 get {
                     try {
@@ -1609,9 +1760,15 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FechaVencimiento {
+            public string FechaVencimiento {
                 get {
-                    return ((global::System.DateTime)(this[this.tablepaConsultaReporteFactura.FechaVencimientoColumn]));
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.FechaVencimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaVencimiento\' in table \'paConsultaReporteFactura\' is DB" +
+                                "Null.", e);
+                    }
                 }
                 set {
                     this[this.tablepaConsultaReporteFactura.FechaVencimientoColumn] = value;
@@ -1620,9 +1777,15 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FechaFactura {
+            public string FechaFactura {
                 get {
-                    return ((global::System.DateTime)(this[this.tablepaConsultaReporteFactura.FechaFacturaColumn]));
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.FechaFacturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FechaFactura\' in table \'paConsultaReporteFactura\' is DBNull" +
+                                ".", e);
+                    }
                 }
                 set {
                     this[this.tablepaConsultaReporteFactura.FechaFacturaColumn] = value;
@@ -1804,6 +1967,118 @@ namespace SistemaFacturacion {
                 }
                 set {
                     this[this.tablepaConsultaReporteFactura.NroCuentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea1 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.Linea1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Linea1\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.Linea1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.Linea2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Linea2\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.Linea2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea3 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.Linea3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Linea3\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.Linea3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea4 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.Linea4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Linea4\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.Linea4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea5 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.Linea5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Linea5\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.Linea5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Linea6 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.Linea6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Linea6\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.Linea6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Dian {
+                get {
+                    try {
+                        return ((string)(this[this.tablepaConsultaReporteFactura.DianColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dian\' in table \'paConsultaReporteFactura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepaConsultaReporteFactura.DianColumn] = value;
                 }
             }
             
@@ -2061,6 +2336,18 @@ namespace SistemaFacturacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPorcentajeDescuentoNull() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.PorcentajeDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPorcentajeDescuentoNull() {
+                this[this.tablepaConsultaReporteFactura.PorcentajeDescuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDescuentoNull() {
                 return this.IsNull(this.tablepaConsultaReporteFactura.DescuentoColumn);
             }
@@ -2069,6 +2356,30 @@ namespace SistemaFacturacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDescuentoNull() {
                 this[this.tablepaConsultaReporteFactura.DescuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaVencimientoNull() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.FechaVencimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaVencimientoNull() {
+                this[this.tablepaConsultaReporteFactura.FechaVencimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFechaFacturaNull() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.FechaFacturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFechaFacturaNull() {
+                this[this.tablepaConsultaReporteFactura.FechaFacturaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2177,6 +2488,90 @@ namespace SistemaFacturacion {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNroCuentaNull() {
                 this[this.tablepaConsultaReporteFactura.NroCuentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLinea1Null() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.Linea1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLinea1Null() {
+                this[this.tablepaConsultaReporteFactura.Linea1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLinea2Null() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.Linea2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLinea2Null() {
+                this[this.tablepaConsultaReporteFactura.Linea2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLinea3Null() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.Linea3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLinea3Null() {
+                this[this.tablepaConsultaReporteFactura.Linea3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLinea4Null() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.Linea4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLinea4Null() {
+                this[this.tablepaConsultaReporteFactura.Linea4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLinea5Null() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.Linea5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLinea5Null() {
+                this[this.tablepaConsultaReporteFactura.Linea5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLinea6Null() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.Linea6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLinea6Null() {
+                this[this.tablepaConsultaReporteFactura.Linea6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDianNull() {
+                return this.IsNull(this.tablepaConsultaReporteFactura.DianColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDianNull() {
+                this[this.tablepaConsultaReporteFactura.DianColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2365,6 +2760,7 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Subtotal", "Subtotal");
             tableMapping.ColumnMappings.Add("Total", "Total");
             tableMapping.ColumnMappings.Add("BaseGravada", "BaseGravada");
+            tableMapping.ColumnMappings.Add("PorcentajeDescuento", "PorcentajeDescuento");
             tableMapping.ColumnMappings.Add("Descuento", "Descuento");
             tableMapping.ColumnMappings.Add("FechaVencimiento", "FechaVencimiento");
             tableMapping.ColumnMappings.Add("FechaFactura", "FechaFactura");
@@ -2380,6 +2776,13 @@ namespace SistemaFacturacion.Sistema_FacturacionDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Banco", "Banco");
             tableMapping.ColumnMappings.Add("TipoCta", "TipoCta");
             tableMapping.ColumnMappings.Add("NroCuenta", "NroCuenta");
+            tableMapping.ColumnMappings.Add("Linea1", "Linea1");
+            tableMapping.ColumnMappings.Add("Linea2", "Linea2");
+            tableMapping.ColumnMappings.Add("Linea3", "Linea3");
+            tableMapping.ColumnMappings.Add("Linea4", "Linea4");
+            tableMapping.ColumnMappings.Add("Linea5", "Linea5");
+            tableMapping.ColumnMappings.Add("Linea6", "Linea6");
+            tableMapping.ColumnMappings.Add("Dian", "Dian");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

@@ -48,6 +48,7 @@
               <Mapping SourceColumn="Subtotal" DataSetColumn="Subtotal" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
               <Mapping SourceColumn="BaseGravada" DataSetColumn="BaseGravada" />
+              <Mapping SourceColumn="PorcentajeDescuento" DataSetColumn="PorcentajeDescuento" />
               <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
               <Mapping SourceColumn="FechaVencimiento" DataSetColumn="FechaVencimiento" />
               <Mapping SourceColumn="FechaFactura" DataSetColumn="FechaFactura" />
@@ -63,6 +64,13 @@
               <Mapping SourceColumn="Banco" DataSetColumn="Banco" />
               <Mapping SourceColumn="TipoCta" DataSetColumn="TipoCta" />
               <Mapping SourceColumn="NroCuenta" DataSetColumn="NroCuenta" />
+              <Mapping SourceColumn="Linea1" DataSetColumn="Linea1" />
+              <Mapping SourceColumn="Linea2" DataSetColumn="Linea2" />
+              <Mapping SourceColumn="Linea3" DataSetColumn="Linea3" />
+              <Mapping SourceColumn="Linea4" DataSetColumn="Linea4" />
+              <Mapping SourceColumn="Linea5" DataSetColumn="Linea5" />
+              <Mapping SourceColumn="Linea6" DataSetColumn="Linea6" />
+              <Mapping SourceColumn="Dian" DataSetColumn="Dian" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -91,17 +99,17 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PXB" msprop:Generator_ColumnVarNameInTable="columnPXB" msprop:Generator_ColumnPropNameInRow="PXB" msprop:Generator_ColumnPropNameInTable="PXBColumn" msprop:Generator_UserColumnName="PXB" minOccurs="0">
+              <xs:element name="PXB" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPXB" msprop:Generator_ColumnPropNameInRow="PXB" msprop:Generator_ColumnPropNameInTable="PXBColumn" msprop:Generator_UserColumnName="PXB" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="55" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Celular" msprop:Generator_ColumnVarNameInTable="columnCelular" msprop:Generator_ColumnPropNameInRow="Celular" msprop:Generator_ColumnPropNameInTable="CelularColumn" msprop:Generator_UserColumnName="Celular" minOccurs="0">
+              <xs:element name="Celular" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCelular" msprop:Generator_ColumnPropNameInRow="Celular" msprop:Generator_ColumnPropNameInTable="CelularColumn" msprop:Generator_UserColumnName="Celular" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="55" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -259,6 +267,13 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="PorcentajeDescuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPorcentajeDescuento" msprop:Generator_ColumnPropNameInRow="PorcentajeDescuento" msprop:Generator_ColumnPropNameInTable="PorcentajeDescuentoColumn" msprop:Generator_UserColumnName="PorcentajeDescuento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Descuento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescuento" msprop:Generator_ColumnPropNameInRow="Descuento" msprop:Generator_ColumnPropNameInTable="DescuentoColumn" msprop:Generator_UserColumnName="Descuento" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -266,8 +281,20 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" />
-              <xs:element name="FechaFactura" msprop:Generator_ColumnVarNameInTable="columnFechaFactura" msprop:Generator_ColumnPropNameInRow="FechaFactura" msprop:Generator_ColumnPropNameInTable="FechaFacturaColumn" msprop:Generator_UserColumnName="FechaFactura" type="xs:dateTime" />
+              <xs:element name="FechaVencimiento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaFactura" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFechaFactura" msprop:Generator_ColumnPropNameInRow="FechaFactura" msprop:Generator_ColumnPropNameInTable="FechaFacturaColumn" msprop:Generator_UserColumnName="FechaFactura" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="CodigoInsumo" msprop:Generator_ColumnVarNameInTable="columnCodigoInsumo" msprop:Generator_ColumnPropNameInRow="CodigoInsumo" msprop:Generator_ColumnPropNameInTable="CodigoInsumoColumn" msprop:Generator_UserColumnName="CodigoInsumo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -343,6 +370,55 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea1" msprop:Generator_ColumnVarNameInTable="columnLinea1" msprop:Generator_ColumnPropNameInRow="Linea1" msprop:Generator_ColumnPropNameInTable="Linea1Column" msprop:Generator_UserColumnName="Linea1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea2" msprop:Generator_ColumnVarNameInTable="columnLinea2" msprop:Generator_ColumnPropNameInRow="Linea2" msprop:Generator_ColumnPropNameInTable="Linea2Column" msprop:Generator_UserColumnName="Linea2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea3" msprop:Generator_ColumnVarNameInTable="columnLinea3" msprop:Generator_ColumnPropNameInRow="Linea3" msprop:Generator_ColumnPropNameInTable="Linea3Column" msprop:Generator_UserColumnName="Linea3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea4" msprop:Generator_ColumnVarNameInTable="columnLinea4" msprop:Generator_ColumnPropNameInRow="Linea4" msprop:Generator_ColumnPropNameInTable="Linea4Column" msprop:Generator_UserColumnName="Linea4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea5" msprop:Generator_ColumnVarNameInTable="columnLinea5" msprop:Generator_ColumnPropNameInRow="Linea5" msprop:Generator_ColumnPropNameInTable="Linea5Column" msprop:Generator_UserColumnName="Linea5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea6" msprop:Generator_ColumnVarNameInTable="columnLinea6" msprop:Generator_ColumnPropNameInRow="Linea6" msprop:Generator_ColumnPropNameInTable="Linea6Column" msprop:Generator_UserColumnName="Linea6" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dian" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDian" msprop:Generator_ColumnPropNameInRow="Dian" msprop:Generator_ColumnPropNameInTable="DianColumn" msprop:Generator_UserColumnName="Dian" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="243" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

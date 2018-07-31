@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,14 +14,22 @@ namespace SistemaFacturacion.Formularios
 {
     public partial class FrmFactura : System.Windows.Forms.Form
     {
+
+
+        
+      
+
+        
         public FrmFactura()
         {
             InitializeComponent();
+          
         }
 
         DataTable dt;
         DataSet ds;
         DataTable dts;
+        DataView dtv = new DataView();
         string FacActual;
         Clases.clsUtilidades Utilidades = new Clases.clsUtilidades();
         Clases.ProcesaDatos pd = new Clases.ProcesaDatos();
@@ -35,11 +44,15 @@ namespace SistemaFacturacion.Formularios
 
             CargarCombos();
             dtpFechaFactura.Format = DateTimePickerFormat.Custom;
+            //dtpFechaFactura.CustomFormat = "MM/dd/yyyy";
             dtpFechaFactura.CustomFormat = "dd/MM/yyyy";
             dtpFechavencimento.Format = DateTimePickerFormat.Custom;
+            // dtpFechavencimento.CustomFormat = "MM/dd/yyyy";
             dtpFechavencimento.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaFactura.Value = DateTime.Now;
             this.dtpFechavencimento.Value = DateTime.Now;
+            WindowState = FormWindowState.Maximized;
+
 
 
         }
@@ -57,12 +70,12 @@ namespace SistemaFacturacion.Formularios
 
             this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-            DataView dtv = new DataView(ds.Tables[1]);
-            dtv.Sort = "Nombre DESC";
+             dtv = new DataView(ds.Tables[1]);
+            dtv.Sort = "RazonSocial ASC";
             DataTable dt = dtv.ToTable();
             cbbCliente.DataSource = dt;
             cbbCliente.DisplayMember = "RazonSocial";
-            cbbCliente.ValueMember = "Nit";
+            cbbCliente.ValueMember = "IdCliente";
             cbbCliente.Text = "Selecione un cliente";
 
             txtNumFac.Text = ds.Tables[2].Rows[0]["NumFac"].ToString();
@@ -75,81 +88,95 @@ namespace SistemaFacturacion.Formularios
             cbbCompania.DataSource = ds.Tables[5];
             cbbCompania.DisplayMember = "RazonSocial";
             cbbCompania.ValueMember = "IdCompañia";
+
+            cbbSede.Text = "";
+            this.dtpFechaFactura.Value = DateTime.Now;
+            this.dtpFechavencimento.Value = DateTime.Now;
+            textBox1.Text = "";
+            errorProvider1.Clear();
+
+
 
         }
 
         private void CargarCombos()
         {
+            try
+            {
+                ds = pd.ConsultasCombos("paConsultas", "0");
+                //string[] s = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
+
+                cbbResolucion.DataSource = ds.Tables[0];
+                cbbResolucion.ValueMember = "NumeroResolucion";
+                this.cbbResolucion.AutoCompleteCustomSource.AddRange(ds.Tables[0].Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray());
+                this.cbbResolucion.AutoCompleteMode = AutoCompleteMode.Suggest;
+                this.cbbResolucion.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
+
+                //this.cbbCliente.AutoCompleteCustomSource.AddRange(ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray());
+                //autocompleta combox
+                this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+                DataView dtv = new DataView(ds.Tables[1]);
+                dtv.Sort = "RazonSocial ASC";
+                DataTable dt = dtv.ToTable();
+                cbbCliente.DataSource = dt;
+                cbbCliente.DisplayMember = "RazonSocial";
+                cbbCliente.ValueMember = "IdCliente";
+                cbbCliente.Text = "Selecione un cliente";
+
+                //listBox1.DataSource = dt;
+                //listBox1.DisplayMember = "RazonSocial";
+                //listBox1.ValueMember = "Nit";
+
+
+                txtNumFac.Text = ds.Tables[2].Rows[0]["NumFac"].ToString();
+                dgvInsumos.DataSource = ds.Tables[3];
+                dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
+                //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
+                Utilidades.FormatearGrid(dgvInsumos, "Precio", "C");
+                Utilidades.AlinearContenidoColumna(dgvInsumos);
+
+                //DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+                //BindingSource bs1 = new BindingSource();
+                //bs1.DataSource = ds.Tables[6];
+                //cmb.DataPropertyName = "NombreUM";
+                //cmb.HeaderText = "UnidadMedida";
+                //cmb.Width = 120;
+                //cmb.DataSource = bs1;
+                //cmb.ValueMember = "NombreUM";
+                //cmb.DisplayMember = "NombreUM";
+
+                //dgvInsumos.Columns.Insert(2, cmb);
+                dgvInsumosFacturar.DataSource = ds.Tables[4];
+
+
+                cbbCompania.DataSource = ds.Tables[5];
+                cbbCompania.DisplayMember = "RazonSocial";
+                cbbCompania.ValueMember = "IdCompañia";
+
+                cbbSede.DataSource = null;
+
+                //dgvInsumosFacturar.Columns.Add("CodigoInsumo", "CodigoInsumo");
+                //dgvInsumosFacturar.Columns.Add("Descripcion", "Descripcion");
+                //dgvInsumosFacturar.Columns.Add("Iva", "Iva");
+                //dgvInsumosFacturar.Columns.Add("Cantidad", "Cantidad");
+                //dgvInsumosFacturar.Columns.Add("VlrUnitario", "VlrUnitario");
+                //dgvInsumosFacturar.Columns.Add("VlrIva", "VlrIva");
+                //dgvInsumosFacturar.Columns.Add("VlrBruto", "VlrBruto");
+                //dgvInsumosFacturar.Columns.Add("VlrTotal", "VlrTotal");
+                txtDescuento.Text = "0";
+                rtxComentarios.Text = "";
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
            
-            ds = pd.ConsultasCombos("paConsultas","0");
-            //string[] s = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
-
-            cbbResolucion.DataSource = ds.Tables[0];
-            cbbResolucion.ValueMember = "NumeroResolucion";
-            this.cbbResolucion.AutoCompleteCustomSource.AddRange(ds.Tables[0].Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray());
-            this.cbbResolucion.AutoCompleteMode = AutoCompleteMode.Suggest;
-            this.cbbResolucion.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
-
-
-            // this.cbbCliente.AutoCompleteCustomSource.AddRange(ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray());
-            // autocompleta combox
-            this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-            DataView dtv = new DataView(ds.Tables[1]);
-            dtv.Sort = "Nombre DESC";
-            DataTable dt = dtv.ToTable();
-            cbbCliente.DataSource = dt;
-            cbbCliente.DisplayMember = "RazonSocial";
-            cbbCliente.ValueMember = "Nit";
-            cbbCliente.Text = "Selecione un cliente";
-
-
-
-            txtNumFac.Text = ds.Tables[2].Rows[0]["NumFac"].ToString();
-            dgvInsumos.DataSource = ds.Tables[3];
-            dgvInsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            //dgvInsumos.Columns["Precio"].DefaultCellStyle.FormatProvider= System.Globalization.CultureInfo.GetCultureInfo("en-us");
-            //dgvInsumos.Columns["Precio"].DefaultCellStyle.Format =string.Format( "C");
-            Utilidades.FormatearGrid(dgvInsumos, "Precio","C");
-            Utilidades.AlinearContenidoColumna(dgvInsumos);
-
-            //DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
-            //BindingSource bs1 = new BindingSource();
-            //bs1.DataSource = ds.Tables[6];
-            //cmb.DataPropertyName = "NombreUM";
-            //cmb.HeaderText = "UnidadMedida";
-            //cmb.Width = 120;
-            //cmb.DataSource = bs1;
-            //cmb.ValueMember = "NombreUM";
-            //cmb.DisplayMember = "NombreUM";
-
-            //dgvInsumos.Columns.Insert(2, cmb);
-            dgvInsumosFacturar.DataSource = ds.Tables[4];
-          
-
-
-
-
-
-
-            // dgvInsumos.Columns["Unidad medida"].DisplayIndex = 0;
-
-
-
-
-            cbbCompania.DataSource = ds.Tables[5];
-            cbbCompania.DisplayMember = "RazonSocial";
-            cbbCompania.ValueMember = "IdCompañia";
-
-            //dgvInsumosFacturar.Columns.Add("CodigoInsumo", "CodigoInsumo");
-            //dgvInsumosFacturar.Columns.Add("Descripcion", "Descripcion");
-            //dgvInsumosFacturar.Columns.Add("Iva", "Iva");
-            //dgvInsumosFacturar.Columns.Add("Cantidad", "Cantidad");
-            //dgvInsumosFacturar.Columns.Add("VlrUnitario", "VlrUnitario");
-            //dgvInsumosFacturar.Columns.Add("VlrIva", "VlrIva");
-            //dgvInsumosFacturar.Columns.Add("VlrBruto", "VlrBruto");
-            //dgvInsumosFacturar.Columns.Add("VlrTotal", "VlrTotal");
          
 
 
@@ -368,15 +395,75 @@ namespace SistemaFacturacion.Formularios
             
         }
 
-        private void cbbCliente_Validated(object sender, EventArgs e)
+        private void ConsultarDireccion()
         {
             DataSet dsDir = new DataSet();
             dsDir = pd.ConsultasCombos("paConsultaDirecciones", cbbCliente.SelectedValue.ToString());
             cbbSede.DataSource = dsDir.Tables[0];
             cbbSede.ValueMember = "idDireccion";
             cbbSede.DisplayMember = "NombreSede";
+        }
+        private bool ValidarClientes()
+        {
+            try
+            {
+                if (cbbCliente.Text == "Selecione un cliente")
+                {
+                    errorProvider1.SetError(cbbCliente, "Selecione un cliente");
+                    return true;
+                }else
+                {
+                    errorProvider1.Clear();
+                }
+                if (cbbCliente.Text == "")
+                {
+                    cbbCliente.Text = "Selecione un cliente";
+                    return true;
+                }
+                if (cbbCliente.SelectedValue == null)
+                {
+                    errorProvider1.SetError(cbbCliente, "El Cliente No existe");
+                    cbbCliente.Focus();
+                    return true;
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    
+                }
+                //if(cbbSede.SelectedValue==null)
+                //{
+                //    errorProvider1.SetError(cbbSede, "Seleccione un dato");
+                //    cbbSede.Focus();
+                //    return true;
+                //}else
+                //{
+                //    errorProvider1.Clear();
+                //}
+               
+               
+            }
 
-           
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            return false;
+        }
+
+        private void cbbCliente_Validated(object sender, EventArgs e)
+        {
+            
+            
+          if(ValidarClientes())
+            {
+                return;
+            }else
+            {
+                ConsultarDireccion();
+            }
+
 
 
         }
@@ -389,11 +476,18 @@ namespace SistemaFacturacion.Formularios
                
                 return true;
             }
-            if(cbbCliente.Text== "Selecione un cliente")
+            if(ValidarClientes() )
             {
-                MessageBox.Show("Debe Seleccionar un cliente", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cbbCliente.Focus();
+              
                 return true;
+            }
+            if(cbbSede.SelectedValue==null)
+            {
+                errorProvider1.SetError(cbbSede, "Seleccione una sede");
+                return true;
+            }else
+            {
+                errorProvider1.Clear();
             }
 
 
@@ -406,25 +500,8 @@ namespace SistemaFacturacion.Formularios
         {
 
 
-
-            long Dft = 0;
-            if (txtDescuento.Text.Length < 1)
-                txtDescuento.Text = "0";
-
-            if (txtDescuento.Text.Substring(txtDescuento.Text.Length - 1) != "%")
-            {
-
-
-                if (!long.TryParse(txtDescuento.Text, out Dft))
-                {
-                    MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtDescuento.Text = "0";
-                    txtDescuento.SelectAll();
-                    return;
-
-                }
-
-            }
+            Utilidades.ValidaNumeros(txtDescuento,"%");
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -512,9 +589,9 @@ namespace SistemaFacturacion.Formularios
 
            if( dts.Rows[0][0].ToString() == "ok")
             {
-                FrmReporteFac fac = new FrmReporteFac(FacActual);
-                CargarCombos();
-                fac.Show();
+                // fac = new FrmReporteFac(FacActual);
+                //CargarCombos();
+                //fac.Show();
                 
             }
 
@@ -522,7 +599,170 @@ namespace SistemaFacturacion.Formularios
            
         }
 
-      
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (dgvInsumosFacturar.RowCount > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Hay una factura en proceso si continua perdera la informacion que no haya guardado, desea continuar?", "Sistema Facturacion Reverdecer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CargarCombos();
+
+                }
+
+
+
+
+
+            }
+            else
+            {
+                CargarCombos();
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (ValidarControles())
+
+            {
+                return;
+            }
+            GuardarDocumento();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (ValidarControles())
+
+            {
+                dts = null;
+                return;
+            }
+            if(ValidarClientes())
+            {
+                return;
+            }
+
+            GuardarDocumento();
+
+            if (dts == null)
+            {
+                return;
+            }
+
+            if (dts.Rows[0][0].ToString() == "ok")
+            {
+                Form fac = new FrmReporteFactura(FacActual);
+                CargarCombos();
+                fac.Show();
+
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+  
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (dgvInsumosFacturar.RowCount > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Hay una factura en proceso si continua perdera la informacion que no haya guardado, desea continuar?", "Sistema Facturacion Reverdecer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CargarCombos();
+                }
+
+
+
+
+            }
+            else
+            {
+                CargarCombos();
+            }
+        }
+
+
+        private void cbbCliente_TextChanged(object sender, EventArgs e)
+        {
+            //pd.ConsultasCombos
+            //if (cbbCliente.DataSource == null)
+            //{
+            //    DataView dtv = new DataView(ds.Tables[1]);
+            //    DataTable dt = dtv.ToTable();
+            //    cbbCliente.DataSource = dt;
+            //    cbbCliente.DisplayMember = "RazonSocial";
+            //    cbbCliente.ValueMember = "Nit";
+            //    cbbCliente.Text = "Selecione un cliente";
+            //}
+            //else
+            //{
+            //    string Dato = cbbCliente.Text; //cbbCliente.GetItemText(cbbCliente.SelectedItem).ToString();
+            //    BindingSource bs = new BindingSource();
+            //    bs.DataSource = cbbCliente.DataSource;
+            //    // string filtro = string.Format($"(Nombre ={s})");
+            //    bs.Filter = " RazonSocial LIKE '%" + Dato + "%' OR  Nit LIKE '%" + Dato + "%' ";
+            //    cbbCliente.DataSource = bs;
+            //}
+
+        }
+
+        private void cbbCliente_TextUpdate(object sender, EventArgs e)
+        {
+            string Dato =cbbCliente.Text;
+
+            ////cbbCliente.DataSource = null;
+            ////cbbCliente.DataSource = pd.ConsultasCombos("paConsultasConParametros", new object[] {3,Dato }).Tables[0];
+            ////cbbCliente.DisplayMember = "RazonSocial";
+            ////cbbCliente.ValueMember = "Nit";
+
+            //DataView vista = new DataView(dt);
+            //string textToSearch = Dato;
+            //listBox1.Visible = false; // hide the listbox, see below for why doing that
+            //if (String.IsNullOrEmpty(textToSearch))
+            //    return; // return with listbox hidden if the keyword is empty
+            //            //search
+            //string[] result = (from i in Collection where i.ToLower().Contains(textToSearch) select i).ToArray();
+            //if (result.Length == 0)
+            //    return; // return with listbox hidden if nothing found
+
+            //listBox1.Items.Clear(); // remember to Clear before Add
+            //listBox1.Items.AddRange(result);
+            //listBox1.Visible = true; // show the listbox again
+            //ds = pd.ConsultasCombos("paConsultas", "0");
+            ////string[] s = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
+
+            
+
+
+
+            //// this.cbbCliente.AutoCompleteCustomSource.AddRange(ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray());
+            //// autocompleta combox
+           
+            //DataView dtv = new DataView(ds.Tables[1]);
+            //dtv.Sort = "RazonSocial ASC";
+            //DataTable dt = dtv.ToTable();
+            //dtv.RowFilter = "RazonSocial LIKE '%" + Dato + "%'";
+            //dtv.Sort = "Nit";
+            //listBox1.DataSource = dtv;
+            //listBox1.Update();
+
+
+        }
+
+
+
+        private void cbbCliente_MouseUp(object sender, MouseEventArgs e)
+        {
+            cbbSede.DataSource = null;
+
+        }
+
+   
     }
 }
 
