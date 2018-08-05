@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Deployment.Application;
+
 
 namespace SistemaFacturacion.Formularios
 {
@@ -143,17 +145,17 @@ namespace SistemaFacturacion.Formularios
 
         private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = this.MdiChildren.FirstOrDefault(x => x is FrmMaestros);
-            
+           // Form frm = this.MdiChildren.FirstOrDefault(x => x is FrmMaestros);
 
-            if (frm != null )
+            foreach (Form frm1 in Application.OpenForms)
             {
-                if(frm.Text=="Insumos")
+
+                if (frm1.Text == "Insumos")
                 {
-                    frm.BringToFront();
+                    frm1.BringToFront();
                     return;
                 }
-               
+
             }
             Form FrmInsumos = new FrmMaestros("Insumos");
             FrmInsumos.MdiParent = this;
@@ -185,7 +187,13 @@ namespace SistemaFacturacion.Formularios
 
         private void MDIParent_Load(object sender, EventArgs e)
         {
-            tsVersion.Text=Application.ProductVersion;
+            //tsVersion.Text=Application.ProductVersion;
+            tsVersion.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+
+        private void tsVersion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

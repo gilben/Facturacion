@@ -42,17 +42,22 @@ namespace SistemaFacturacion.Formularios
          public  void ConsultaDatosInsumos()
 
         {
+            Clases.clsUtilidades ut = new Clases.clsUtilidades();
             ds = pd.ConsultasCombos("paConsultas", "1");
 
             if (TipoConsulta_ == "Insumos")
             {
                 dgvMaestros.DataSource = ds.Tables[0];
+            
+                ut.FormatearGrid(dgvMaestros, "Precio", "C");
             }else if (TipoConsulta_=="Clientes")
             {
                 gbppal.Text = "Clientes";
                 dgvMaestros.DataSource = ds.Tables[1];
                 dgvMaestros.Columns["Id"].Visible = false;
             }
+            ut.AlinearContenidoColumna(dgvMaestros);
+            dgvMaestros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

@@ -102,21 +102,38 @@ namespace SistemaFacturacion.Formularios
 
         }
 
+        private bool ValidarInsumo()
+        {
+            if (txtDescripcion.Text == "")
+            {
+                errorProvider1.SetError(txtDescripcion, "Amor este campo no puede estar vacio");
+               // MessageBox.Show("El campo descripcion es obligatorio", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDescripcion.Focus();
+                return true;
+            }
+            else { errorProvider1.Clear(); }
+            if (txtPrecio.Text == "")
+            {
+                errorProvider1.SetError(txtPrecio, "Amor este campo no puede estar vacio");
+                //MessageBox.Show("El campo Precio es obligatorio", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPrecio.Focus();
+                return true;
+            }else { errorProvider1.Clear(); }
+            if(txtCantidadActual.Text=="")
+            {
+                errorProvider1.SetError(txtCantidadActual, "Amor este campo no puede estar vacio");
+                return true;
+            }
+            else { errorProvider1.Clear(); }
+            return false;
+
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                if(txtDescripcion.Text=="")
-                {
-                    MessageBox.Show("El campo descripcion es obligatorio", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtDescripcion.Focus();
+                if (ValidarInsumo())
                     return;
-                }else if(txtPrecio.Text=="")
-                {
-                    MessageBox.Show("El campo Precio es obligatorio", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtPrecio.Focus();
-                    return;
-                }
 
                 dt = Clases.ProcesaDatos.ProcesarInsumos("paInsertarActualizarInsumo", new object[] { txtCodigo.Text, txtDescripcion.Text, decimal.Parse(txtCantidadActual.Text), cbbUnidadMedida.SelectedValue,  double.Parse(txtPrecio.Text), cbbIva.GetItemText(cbbIva.SelectedItem), cbbTipo.SelectedValue });
 
@@ -124,6 +141,9 @@ namespace SistemaFacturacion.Formularios
                 {
                     MessageBox.Show("Insumo/servicio Procesado exitosamente", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+                }else
+                {
+                    MessageBox.Show("Ocurrio un error al insertar los datos: " + dt.Rows[0][0].ToString(), "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -138,6 +158,8 @@ namespace SistemaFacturacion.Formularios
 
         }
 
+
+
         private void txtDescripcion_Validated(object sender, EventArgs e)
         {
 
@@ -146,12 +168,15 @@ namespace SistemaFacturacion.Formularios
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-            Utilidades.ValidaNumeros(txtPrecio);
+            Utilidades.ValidaNumeros(txtPrecio,new object[] {".","," } );
         }
 
         private void txtPrecio_Validated(object sender, EventArgs e)
         {
-           
+            if (txtPrecio.Text == "")
+                return;
+           decimal _txtPrecio= decimal.Parse( txtPrecio.Text);
+            txtPrecio.Text = _txtPrecio.ToString("N");
         }
     }
 }

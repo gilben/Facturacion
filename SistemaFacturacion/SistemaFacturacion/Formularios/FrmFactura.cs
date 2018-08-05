@@ -44,11 +44,11 @@ namespace SistemaFacturacion.Formularios
 
             CargarCombos();
             dtpFechaFactura.Format = DateTimePickerFormat.Custom;
-            //dtpFechaFactura.CustomFormat = "MM/dd/yyyy";
-            dtpFechaFactura.CustomFormat = "dd/MM/yyyy";
+            dtpFechaFactura.CustomFormat = "MM/dd/yyyy";
+            //dtpFechaFactura.CustomFormat = "dd/MM/yyyy";
             dtpFechavencimento.Format = DateTimePickerFormat.Custom;
-            // dtpFechavencimento.CustomFormat = "MM/dd/yyyy";
-            dtpFechavencimento.CustomFormat = "dd/MM/yyyy";
+             dtpFechavencimento.CustomFormat = "MM/dd/yyyy";
+            //dtpFechavencimento.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaFactura.Value = DateTime.Now;
             this.dtpFechavencimento.Value = DateTime.Now;
             WindowState = FormWindowState.Maximized;
@@ -68,12 +68,12 @@ namespace SistemaFacturacion.Formularios
             this.cbbResolucion.AutoCompleteMode = AutoCompleteMode.Suggest;
             this.cbbResolucion.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
-            this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-             dtv = new DataView(ds.Tables[1]);
-            dtv.Sort = "RazonSocial ASC";
-            DataTable dt = dtv.ToTable();
-            cbbCliente.DataSource = dt;
+            //this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            //this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+            // dtv = new DataView(ds.Tables[1]);
+            //dtv.Sort = "RazonSocial ASC";
+            //DataTable dt = dtv.ToTable();
+            cbbCliente.DataSource = ds.Tables[1];
             cbbCliente.DisplayMember = "RazonSocial";
             cbbCliente.ValueMember = "IdCliente";
             cbbCliente.Text = "Selecione un cliente";
@@ -116,12 +116,12 @@ namespace SistemaFacturacion.Formularios
 
                 //this.cbbCliente.AutoCompleteCustomSource.AddRange(ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray());
                 //autocompleta combox
-                this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
-                DataView dtv = new DataView(ds.Tables[1]);
-                dtv.Sort = "RazonSocial ASC";
-                DataTable dt = dtv.ToTable();
-                cbbCliente.DataSource = dt;
+                //this.cbbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //this.cbbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+                //DataView dtv = new DataView(ds.Tables[1]);
+                //dtv.Sort = "RazonSocial ASC";
+                //DataTable dt = dtv.ToTable();
+                cbbCliente.DataSource =ds.Tables[1];
                 cbbCliente.DisplayMember = "RazonSocial";
                 cbbCliente.ValueMember = "IdCliente";
                 cbbCliente.Text = "Selecione un cliente";
@@ -255,9 +255,9 @@ namespace SistemaFacturacion.Formularios
             dr[7] = Bruto.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
             dr[8] = Total.ToString("N");//.ToString("c0", System.Globalization.CultureInfo.GetCultureInfo("en-us"));
 
+        
 
-
-            ds.Tables[4].Rows.InsertAt(dr, 0);
+            ds.Tables[4].Rows.InsertAt(dr, dgvInsumos.CurrentCell.RowIndex);
             dgvInsumosFacturar.DataSource = ds.Tables[4];
             Utilidades.AlinearContenidoColumna(dgvInsumosFacturar);
 
@@ -454,15 +454,16 @@ namespace SistemaFacturacion.Formularios
 
         private void cbbCliente_Validated(object sender, EventArgs e)
         {
-            
-            
-          if(ValidarClientes())
-            {
-                return;
-            }else
-            {
-                ConsultarDireccion();
-            }
+
+
+            //if (ValidarClientes())
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    ConsultarDireccion();
+            //}
 
 
 
@@ -500,7 +501,7 @@ namespace SistemaFacturacion.Formularios
         {
 
 
-            Utilidades.ValidaNumeros(txtDescuento,"%");
+            Utilidades.ValidaNumeros(txtDescuento, new object[] {"%"} );
             
         }
 
@@ -689,71 +690,29 @@ namespace SistemaFacturacion.Formularios
 
         private void cbbCliente_TextChanged(object sender, EventArgs e)
         {
-            //pd.ConsultasCombos
-            //if (cbbCliente.DataSource == null)
-            //{
-            //    DataView dtv = new DataView(ds.Tables[1]);
-            //    DataTable dt = dtv.ToTable();
-            //    cbbCliente.DataSource = dt;
-            //    cbbCliente.DisplayMember = "RazonSocial";
-            //    cbbCliente.ValueMember = "Nit";
-            //    cbbCliente.Text = "Selecione un cliente";
-            //}
-            //else
-            //{
-            //    string Dato = cbbCliente.Text; //cbbCliente.GetItemText(cbbCliente.SelectedItem).ToString();
-            //    BindingSource bs = new BindingSource();
-            //    bs.DataSource = cbbCliente.DataSource;
-            //    // string filtro = string.Format($"(Nombre ={s})");
-            //    bs.Filter = " RazonSocial LIKE '%" + Dato + "%' OR  Nit LIKE '%" + Dato + "%' ";
-            //    cbbCliente.DataSource = bs;
-            //}
-
-        }
-
-        private void cbbCliente_TextUpdate(object sender, EventArgs e)
-        {
-            string Dato =cbbCliente.Text;
-
-            ////cbbCliente.DataSource = null;
-            ////cbbCliente.DataSource = pd.ConsultasCombos("paConsultasConParametros", new object[] {3,Dato }).Tables[0];
-            ////cbbCliente.DisplayMember = "RazonSocial";
-            ////cbbCliente.ValueMember = "Nit";
-
-            //DataView vista = new DataView(dt);
-            //string textToSearch = Dato;
+            if (cbbCliente.DataSource == null || cbbCliente.Text== "Selecione un cliente")
+            {
+                return;
+            }
+            string[] arrray = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();// get the keyword to search
+            string textToSearch = cbbCliente.Text.ToLower();
             //listBox1.Visible = false; // hide the listbox, see below for why doing that
-            //if (String.IsNullOrEmpty(textToSearch))
-            //    return; // return with listbox hidden if the keyword is empty
-            //            //search
-            //string[] result = (from i in Collection where i.ToLower().Contains(textToSearch) select i).ToArray();
-            //if (result.Length == 0)
-            //    return; // return with listbox hidden if nothing found
+            if (String.IsNullOrEmpty(textToSearch))
+                return; // return with listbox hidden if the keyword is empty
+            //search
+            string[] result = (from i in arrray where i.ToLower().Contains(textToSearch) select i).ToArray();
+            if (result.Length == 0)
+                return; // return with listbox hidden if nothing found
 
-            //listBox1.Items.Clear(); // remember to Clear before Add
-            //listBox1.Items.AddRange(result);
-            //listBox1.Visible = true; // show the listbox again
-            //ds = pd.ConsultasCombos("paConsultas", "0");
-            ////string[] s = ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray();
+            lsCliente.Items.Clear(); // remember to Clear before Add
+            lsCliente.Items.AddRange(result);
+            lsCliente.Visible = true; // show the listbox again 
 
-            
-
-
-
-            //// this.cbbCliente.AutoCompleteCustomSource.AddRange(ds.Tables[1].Rows.OfType<DataRow>().Select(k => k[2].ToString()).ToArray());
-            //// autocompleta combox
-           
-            //DataView dtv = new DataView(ds.Tables[1]);
-            //dtv.Sort = "RazonSocial ASC";
-            //DataTable dt = dtv.ToTable();
-            //dtv.RowFilter = "RazonSocial LIKE '%" + Dato + "%'";
-            //dtv.Sort = "Nit";
-            //listBox1.DataSource = dtv;
-            //listBox1.Update();
-
+            //comboBox1.DataSource = data.ToList();
 
         }
 
+       
 
 
         private void cbbCliente_MouseUp(object sender, MouseEventArgs e)
@@ -762,7 +721,30 @@ namespace SistemaFacturacion.Formularios
 
         }
 
-   
+        private void lsCliente_MouseClick(object sender, MouseEventArgs e)
+        {
+            string x = "";
+            try
+            {
+                cbbCliente.Text = lsCliente.SelectedItem.ToString();
+                //listBox1.Visible = false;
+                x = cbbCliente.SelectedValue.ToString();
+
+                if (ValidarClientes())
+                {
+                    return;
+                }
+                else
+                {
+                    ConsultarDireccion();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
+        }
     }
 }
 

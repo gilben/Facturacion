@@ -58,8 +58,6 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Resolucion = new System.Windows.Forms.Label();
             this.cbbResolucion = new System.Windows.Forms.ComboBox();
@@ -70,6 +68,7 @@
             this.cbbCompania = new System.Windows.Forms.ComboBox();
             this.dtpFechaFactura = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lsCliente = new System.Windows.Forms.ListBox();
             this.cbbSede = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -251,8 +250,6 @@
             this.panel2.BackColor = System.Drawing.Color.AliceBlue;
             this.panel2.Controls.Add(this.toolStrip1);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.groupBox8);
-            this.panel2.Controls.Add(this.groupBox7);
             this.panel2.Controls.Add(this.groupBox6);
             this.panel2.Controls.Add(this.groupBox4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -321,25 +318,6 @@
             this.toolStripButton5.Text = "Cancelar";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
-            this.groupBox8.Location = new System.Drawing.Point(973, 39);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(205, 115);
-            this.groupBox8.TabIndex = 13;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Reservar Consecutivos";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Font = new System.Drawing.Font("Berlin Sans FB", 10F);
-            this.groupBox7.Location = new System.Drawing.Point(1203, 39);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(200, 115);
-            this.groupBox7.TabIndex = 12;
-            this.groupBox7.TabStop = false;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.Resolucion);
@@ -351,9 +329,9 @@
             this.groupBox6.Controls.Add(this.cbbCompania);
             this.groupBox6.Controls.Add(this.dtpFechaFactura);
             this.groupBox6.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(337, 39);
+            this.groupBox6.Location = new System.Drawing.Point(552, 39);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(630, 115);
+            this.groupBox6.Size = new System.Drawing.Size(617, 115);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Datos Factura";
@@ -435,6 +413,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lsCliente);
             this.groupBox4.Controls.Add(this.cbbSede);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label1);
@@ -442,25 +421,35 @@
             this.groupBox4.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(12, 39);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(319, 115);
+            this.groupBox4.Size = new System.Drawing.Size(518, 115);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos Cliente";
+            // 
+            // lsCliente
+            // 
+            this.lsCliente.FormattingEnabled = true;
+            this.lsCliente.ItemHeight = 15;
+            this.lsCliente.Location = new System.Drawing.Point(6, 55);
+            this.lsCliente.Name = "lsCliente";
+            this.lsCliente.Size = new System.Drawing.Size(298, 64);
+            this.lsCliente.TabIndex = 1;
+            this.lsCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsCliente_MouseClick);
             // 
             // cbbSede
             // 
             this.cbbSede.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbSede.FormattingEnabled = true;
-            this.cbbSede.Location = new System.Drawing.Point(5, 82);
+            this.cbbSede.Location = new System.Drawing.Point(310, 31);
             this.cbbSede.Name = "cbbSede";
-            this.cbbSede.Size = new System.Drawing.Size(300, 24);
+            this.cbbSede.Size = new System.Drawing.Size(202, 24);
             this.cbbSede.TabIndex = 5;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(0, 66);
+            this.label10.Location = new System.Drawing.Point(307, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(32, 13);
             this.label10.TabIndex = 4;
@@ -470,7 +459,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 25);
+            this.label1.Location = new System.Drawing.Point(1, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 3;
@@ -480,13 +469,11 @@
             // 
             this.cbbCliente.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbCliente.FormattingEnabled = true;
-            this.cbbCliente.Location = new System.Drawing.Point(4, 41);
+            this.cbbCliente.Location = new System.Drawing.Point(4, 31);
             this.cbbCliente.Name = "cbbCliente";
             this.cbbCliente.Size = new System.Drawing.Size(300, 24);
             this.cbbCliente.TabIndex = 2;
-            this.cbbCliente.TextUpdate += new System.EventHandler(this.cbbCliente_TextUpdate);
             this.cbbCliente.TextChanged += new System.EventHandler(this.cbbCliente_TextChanged);
-         
             this.cbbCliente.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cbbCliente_MouseUp);
             this.cbbCliente.Validated += new System.EventHandler(this.cbbCliente_Validated);
             // 
@@ -706,8 +693,6 @@
         private System.Windows.Forms.TextBox txtNumFac;
         private System.Windows.Forms.Label btncancelar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label Resolucion;
         private System.Windows.Forms.ComboBox cbbResolucion;
@@ -736,5 +721,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ListBox lsCliente;
     }
 }

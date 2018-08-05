@@ -320,6 +320,7 @@
             this.dgvFacturas.Size = new System.Drawing.Size(1140, 699);
             this.dgvFacturas.StandardTab = true;
             this.dgvFacturas.TabIndex = 0;
+            this.dgvFacturas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvFacturas_MouseDoubleClick);
             // 
             // toolStrip1
             // 

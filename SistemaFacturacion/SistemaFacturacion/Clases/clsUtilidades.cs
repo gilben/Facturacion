@@ -73,27 +73,33 @@ namespace SistemaFacturacion.Clases
 
             //dgv.Columns[columna ].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
-        public void ValidaNumeros(TextBox texbox, string ParametroExcluir)
+        public void ValidaNumeros(TextBox texbox, object [] ParametroExcluir)
         {
 
             long Dft = 0;
             if (texbox.Text.Length < 1)
                 texbox.Text = "0";
 
-            if (texbox.Text.Substring(texbox.Text.Length - 1) != ParametroExcluir)
+            foreach(object obj in  ParametroExcluir)
             {
-
-
-                if (!long.TryParse(texbox.Text, out Dft))
+               // if (texbox.Text.Substring(texbox.Text.Length - 1) != obj.ToString())
+               if(!texbox.Text.Contains(obj.ToString()))
                 {
-                    MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    texbox.Text = "0";
-                    texbox.SelectAll();
-                    return;
+
+
+                    if (!long.TryParse(texbox.Text, out Dft))
+                    {
+                        MessageBox.Show("Este campo solo acepta valores numericos", "Sistema Factuacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        texbox.Text = "0";
+                        texbox.SelectAll();
+                        return;
+
+                    }
 
                 }
-
             }
+
+           
         }
         public void ValidaNumeros(TextBox texbox)
         {

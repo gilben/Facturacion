@@ -125,6 +125,7 @@
             this.dgvMaestros.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.MintCream;
             this.dgvMaestros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMaestros.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

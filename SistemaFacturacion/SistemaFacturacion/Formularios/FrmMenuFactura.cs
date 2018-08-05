@@ -49,6 +49,7 @@ namespace SistemaFacturacion
             dtpFechaFinal.CustomFormat = "MM/dd/yyyy";
             this.dtpFechaInicial.Value = DateTime.Now;
             this.dtpFechaInicial.Value = DateTime.Now;
+
          
             
 
@@ -69,6 +70,7 @@ namespace SistemaFacturacion
             ut.FormatearGrid(dgvFacturas, "VlrDescuento", "C");
             ut.FormatearGrid(dgvFacturas, "Total", "C");
             ut.FormatearGrid(dgvFacturas, "ValorIva", "C");
+            dgvFacturas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
         }
 
@@ -162,6 +164,19 @@ namespace SistemaFacturacion
             //Form FrmFactura = new Formularios.FrmFactura();
             //FrmFactura.MdiParent = Formularios.MDIParent;
             //FrmFactura.Show();
+        }
+
+        private void dgvFacturas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int row = dgvFacturas.CurrentCell.RowIndex;
+
+
+            dgvFacturas.Rows[row].Cells["Factura"].Value.ToString();
+
+            FrmReporteFactura fac = new FrmReporteFactura(dgvFacturas.Rows[row].Cells["Factura"].Value.ToString());
+
+
+            fac.Show();
         }
     }
     }

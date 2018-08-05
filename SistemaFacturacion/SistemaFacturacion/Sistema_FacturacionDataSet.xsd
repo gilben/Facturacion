@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Sistema_FacturacionConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Sistema_FacturacionConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SistemaFacturacion.Properties.Settings.GlobalReference.Default.Sistema_FacturacionConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Sistema_FacturacionConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Sistema_FacturacionConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SistemaFacturacion.Properties.Settings.GlobalReference.Default.Sistema_FacturacionConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="paConsultaReporteFacturaTableAdapter" GeneratorDataComponentClassName="paConsultaReporteFacturaTableAdapter" Name="paConsultaReporteFactura" UserDataComponentName="paConsultaReporteFacturaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Sistema_FacturacionConnectionString (Settings)" DbObjectName="Sistema_Facturacion.dbo.paConsultaReporteFactura" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Sistema_FacturacionConnectionString1 (Settings)" DbObjectName="Sistema_Facturacion.dbo.paConsultaReporteFactura" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.paConsultaReporteFactura</CommandText>
@@ -34,6 +34,7 @@
               <Mapping SourceColumn="Municipio" DataSetColumn="Municipio" />
               <Mapping SourceColumn="Barrio" DataSetColumn="Barrio" />
               <Mapping SourceColumn="Empresa" DataSetColumn="Empresa" />
+              <Mapping SourceColumn="Logo" DataSetColumn="Logo" />
               <Mapping SourceColumn="NitCliente" DataSetColumn="NitCliente" />
               <Mapping SourceColumn="NomCliente" DataSetColumn="NomCliente" />
               <Mapping SourceColumn="TelCliente" DataSetColumn="TelCliente" />
@@ -61,7 +62,7 @@
               <Mapping SourceColumn="ValorIva" DataSetColumn="ValorIva" />
               <Mapping SourceColumn="SubTotal1" DataSetColumn="SubTotal1" />
               <Mapping SourceColumn="Total1" DataSetColumn="Total1" />
-              <Mapping SourceColumn="Banco" DataSetColumn="Banco" />
+              <Mapping SourceColumn="banco" DataSetColumn="banco" />
               <Mapping SourceColumn="TipoCta" DataSetColumn="TipoCta" />
               <Mapping SourceColumn="NroCuenta" DataSetColumn="NroCuenta" />
               <Mapping SourceColumn="Linea1" DataSetColumn="Linea1" />
@@ -70,6 +71,9 @@
               <Mapping SourceColumn="Linea4" DataSetColumn="Linea4" />
               <Mapping SourceColumn="Linea5" DataSetColumn="Linea5" />
               <Mapping SourceColumn="Linea6" DataSetColumn="Linea6" />
+              <Mapping SourceColumn="Linea7" DataSetColumn="Linea7" />
+              <Mapping SourceColumn="Linea8" DataSetColumn="Linea8" />
+              <Mapping SourceColumn="linea9" DataSetColumn="linea9" />
               <Mapping SourceColumn="Dian" DataSetColumn="Dian" />
             </Mappings>
             <Sources />
@@ -169,10 +173,11 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnPropNameInTable="LogoColumn" msprop:Generator_UserColumnName="Logo" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="NitCliente" msprop:Generator_ColumnVarNameInTable="columnNitCliente" msprop:Generator_ColumnPropNameInRow="NitCliente" msprop:Generator_ColumnPropNameInTable="NitClienteColumn" msprop:Generator_UserColumnName="NitCliente">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="14" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -214,7 +219,7 @@
               <xs:element name="DirCliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDirCliente" msprop:Generator_ColumnPropNameInRow="DirCliente" msprop:Generator_ColumnPropNameInTable="DirClienteColumn" msprop:Generator_UserColumnName="DirCliente" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="101" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -352,10 +357,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Banco" msprop:Generator_ColumnVarNameInTable="columnBanco" msprop:Generator_ColumnPropNameInRow="Banco" msprop:Generator_ColumnPropNameInTable="BancoColumn" msprop:Generator_UserColumnName="Banco" minOccurs="0">
+              <xs:element name="banco" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnbanco" msprop:Generator_ColumnPropNameInRow="banco" msprop:Generator_ColumnPropNameInTable="bancoColumn" msprop:Generator_UserColumnName="banco" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="129" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -394,14 +399,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Linea4" msprop:Generator_ColumnVarNameInTable="columnLinea4" msprop:Generator_ColumnPropNameInRow="Linea4" msprop:Generator_ColumnPropNameInTable="Linea4Column" msprop:Generator_UserColumnName="Linea4" minOccurs="0">
+              <xs:element name="Linea4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLinea4" msprop:Generator_ColumnPropNameInRow="Linea4" msprop:Generator_ColumnPropNameInTable="Linea4Column" msprop:Generator_UserColumnName="Linea4" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Linea5" msprop:Generator_ColumnVarNameInTable="columnLinea5" msprop:Generator_ColumnPropNameInRow="Linea5" msprop:Generator_ColumnPropNameInTable="Linea5Column" msprop:Generator_UserColumnName="Linea5" minOccurs="0">
+              <xs:element name="Linea5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLinea5" msprop:Generator_ColumnPropNameInRow="Linea5" msprop:Generator_ColumnPropNameInTable="Linea5Column" msprop:Generator_UserColumnName="Linea5" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -411,7 +416,28 @@
               <xs:element name="Linea6" msprop:Generator_ColumnVarNameInTable="columnLinea6" msprop:Generator_ColumnPropNameInRow="Linea6" msprop:Generator_ColumnPropNameInTable="Linea6Column" msprop:Generator_UserColumnName="Linea6" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea7" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLinea7" msprop:Generator_ColumnPropNameInRow="Linea7" msprop:Generator_ColumnPropNameInTable="Linea7Column" msprop:Generator_UserColumnName="Linea7" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Linea8" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLinea8" msprop:Generator_ColumnPropNameInRow="Linea8" msprop:Generator_ColumnPropNameInTable="Linea8Column" msprop:Generator_UserColumnName="Linea8" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="linea9" msprop:Generator_ColumnVarNameInTable="columnlinea9" msprop:Generator_ColumnPropNameInRow="linea9" msprop:Generator_ColumnPropNameInTable="linea9Column" msprop:Generator_UserColumnName="linea9" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

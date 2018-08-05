@@ -326,6 +326,7 @@
             // 
             // dgvDirecciones
             // 
+            this.dgvDirecciones.BackgroundColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSeaGreen;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -340,7 +341,6 @@
             this.dgvDirecciones.Name = "dgvDirecciones";
             this.dgvDirecciones.Size = new System.Drawing.Size(542, 288);
             this.dgvDirecciones.TabIndex = 0;
-        
             // 
             // errorProvider1
             // 
