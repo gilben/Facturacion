@@ -81,7 +81,7 @@ namespace SistemaFacturacion.Clases
                 SqlParameter sqlParamContacto = cmd.Parameters.Add("@Contacto", valores[5]);
                 SqlParameter sqlParamTel1 = cmd.Parameters.Add("@Telefono1", valores[6]);
                 SqlParameter sqlParamTel2= cmd.Parameters.Add("@Telefono2", valores[7]);
-                SqlParameter sqlParamCel = cmd.Parameters.Add("@Celular", valores[7]);
+                SqlParameter sqlParamCel = cmd.Parameters.Add("@Celular", valores[8]);
                 SqlParameter sqlParamEstado = cmd.Parameters.Add("@Estado", valores[9]);
 
 
@@ -162,6 +162,11 @@ namespace SistemaFacturacion.Clases
         public DataSet ConsultasCombos(string ProcedimientoAlmacenado)
         {
             return AD.ExecuteDataset(Clases.clsConexion.Connection, ProcedimientoAlmacenado);
+        }
+
+        public DataSet ProcesarDatos(string ProcedimientoAlmacenado, object[] Parametros)
+        {
+            return AD.ExecuteDataset(Clases.clsConexion.Connection, ProcedimientoAlmacenado,Parametros);
         }
     }
 

@@ -35,8 +35,7 @@ namespace SistemaFacturacion
 
         }
 
-
-
+     
         private void Form_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
@@ -50,6 +49,7 @@ namespace SistemaFacturacion
             this.dtpFechaInicial.Value = DateTime.Now;
             this.dtpFechaInicial.Value = DateTime.Now;
 
+
          
             
 
@@ -59,9 +59,11 @@ namespace SistemaFacturacion
 
         private void cargarDatos()
         {
+            
             ds = pd.ConsultasCombos("paConsultarFacturas");
 
             dgvFacturas.DataSource = ds.Tables[0];
+            
             ut.AlinearContenidoColumna(dgvFacturas);
             // ut.FormatearGrid(dgvFacturas, "Iva",true);
             ut.FormatearGrid(dgvFacturas, "SubTotal", "C");
@@ -72,7 +74,8 @@ namespace SistemaFacturacion
             ut.FormatearGrid(dgvFacturas, "ValorIva", "C");
             dgvFacturas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
-        }
+           
+            }
 
 
 
@@ -145,11 +148,7 @@ namespace SistemaFacturacion
         {
             int row = dgvFacturas.CurrentCell.RowIndex;
 
-
-            dgvFacturas.Rows[row].Cells["Factura"].Value.ToString();
-
            FrmReporteFactura fac = new FrmReporteFactura(dgvFacturas.Rows[row].Cells["Factura"].Value.ToString());
-            
 
                fac.Show();
         }
@@ -170,13 +169,81 @@ namespace SistemaFacturacion
         {
             int row = dgvFacturas.CurrentCell.RowIndex;
 
-
-            dgvFacturas.Rows[row].Cells["Factura"].Value.ToString();
-
             FrmReporteFactura fac = new FrmReporteFactura(dgvFacturas.Rows[row].Cells["Factura"].Value.ToString());
 
-
             fac.Show();
+        }
+
+        private void dgvFacturas_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dgvFacturas.Rows)
+            {
+                if (row.Cells["Estado"].Value.ToString() == "Anulado")
+                {
+                    row.DefaultCellStyle.BackColor = Color.LightSalmon;
+
+                }
+
+
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int row = dgvFacturas.CurrentCell.RowIndex;
+
+                DialogResult dialogResult = MessageBox.Show("Esta seguro que desea anular la factura " + dgvFacturas.Rows[row].Cells["Factura"].Value.ToString() + "?", "Sistema Facturacion Reverdecer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ds = pd.ProcesarDatos("paAnularFactura", new object[] { dgvFacturas.Rows[row].Cells["Factura"].Value.ToString() });
+                }else
+                {
+                    return;
+                }
+
+
+                if (ds.Tables[0].Rows[0][0].ToString() == "ok")
+                {
+                    MessageBox.Show("La factura: " + dgvFacturas.Rows[row].Cells["Factura"].Value.ToString() + " Se anulo correctamente", "Sistema Facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error procesando su solicitud: "+ ds.Tables[0].Rows[0][0].ToString() + "" , "Sistema Facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Ocurrio un error procesando su solicitud: " + ex+ "", "Sistema Facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
+            cargarDatos();
+        }
+
+        private void dgvFacturas_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            int row = dgvFacturas.CurrentCell.RowIndex;
+
+            if (dgvFacturas.Rows[row].Cells["Estado"].Value.ToString() == "Anulado")
+            {
+                toolStripButton4.Enabled = false;
+            }
+            else
+            {
+                toolStripButton4.Enabled = true;
+            }
+
+        }
+
+        private void FrmMenuFactura_Activated(object sender, EventArgs e)
+        {
+            cargarDatos();
         }
     }
     }

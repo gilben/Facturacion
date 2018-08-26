@@ -21,3 +21,5 @@ D:\OneDrive - Instituto Tecnológico Metropolitano\SistemaFacturacion\SistemaFac
 D:\OneDrive - Instituto Tecnológico Metropolitano\SistemaFacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.exe
 D:\OneDrive - Instituto Tecnológico Metropolitano\SistemaFacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.pdb
 D:\OneDrive - Instituto Tecnológico Metropolitano\SistemaFacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.csprojResolveAssemblyReference.cache
+D:\OneDrive - Instituto Tecnológico Metropolitano\SistemaFacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmCompañias.resources
+D:\OneDrive - Instituto Tecnológico Metropolitano\SistemaFacturacion\SistemaFacturacion\SistemaFacturacion\obj\Debug\SistemaFacturacion.Formularios.FrmReporteFacturaMes.resources

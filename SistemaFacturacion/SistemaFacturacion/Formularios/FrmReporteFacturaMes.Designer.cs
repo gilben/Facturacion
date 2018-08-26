@@ -1,6 +1,6 @@
 ﻿namespace SistemaFacturacion.Formularios
 {
-    partial class FrmReporteFactura
+    partial class FrmReporteFacturaMes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptFactura = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rptFacturasMes = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rptFactura
+            // rptFacturasMes
             // 
-            this.rptFactura.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptFactura.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptFactura.rdlc";
-            this.rptFactura.Location = new System.Drawing.Point(0, 0);
-            this.rptFactura.Name = "rptFactura";
-            this.rptFactura.Size = new System.Drawing.Size(685, 401);
-            this.rptFactura.TabIndex = 0;
+            this.rptFacturasMes.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptReporteFacturas.rdlc";
+            this.rptFacturasMes.Location = new System.Drawing.Point(12, 12);
+            this.rptFacturasMes.Name = "rptFacturasMes";
+            this.rptFacturasMes.Size = new System.Drawing.Size(828, 447);
+            this.rptFacturasMes.TabIndex = 0;
             // 
-            // FrmReporteFactura
+            // FrmReporteFacturaMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 401);
-            this.Controls.Add(this.rptFactura);
-            this.Name = "FrmReporteFactura";
-            this.Text = "Imprimir Factura";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-           
-            this.Load += new System.EventHandler(this.FrmReporteFactura_Load);
+            this.ClientSize = new System.Drawing.Size(852, 482);
+            this.Controls.Add(this.rptFacturasMes);
+            this.Name = "FrmReporteFacturaMes";
+            this.Text = "FrmReporteFacturaMes";
+            this.Load += new System.EventHandler(this.FrmReporteFacturaMes_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rptFactura;
+        private Microsoft.Reporting.WinForms.ReportViewer rptFacturasMes;
     }
 }

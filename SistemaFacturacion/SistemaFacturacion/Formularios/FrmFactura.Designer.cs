@@ -53,11 +53,6 @@
             this.btncancelar = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Resolucion = new System.Windows.Forms.Label();
             this.cbbResolucion = new System.Windows.Forms.ComboBox();
@@ -81,6 +76,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblIva = new System.Windows.Forms.Label();
+            this.lblDcto = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -102,6 +111,7 @@
             this.groupBox1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -138,6 +148,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.groupBox3.Controls.Add(this.panel6);
             this.groupBox3.Controls.Add(this.panel5);
             this.groupBox3.Controls.Add(this.panel4);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -272,51 +283,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1626, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::SistemaFacturacion.Properties.Resources.recepcion;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(103, 22);
-            this.toolStripButton1.Text = "Nueva Factura";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::SistemaFacturacion.Properties.Resources.disco_flexible;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(69, 22);
-            this.toolStripButton2.Text = "&Guardar";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = global::SistemaFacturacion.Properties.Resources.impresora;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton3.Text = "Imprimir";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = global::SistemaFacturacion.Properties.Resources.volver_a_usar;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(75, 22);
-            this.toolStripButton4.Text = "Refrescar";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = global::SistemaFacturacion.Properties.Resources.red_30336_1280;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton5.Text = "Cancelar";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // groupBox6
             // 
@@ -605,6 +571,7 @@
             this.dgvInsumosFacturar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInsumosFacturar.Size = new System.Drawing.Size(897, 424);
             this.dgvInsumosFacturar.TabIndex = 0;
+            this.dgvInsumosFacturar.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvInsumosFacturar_RowStateChanged);
             // 
             // groupBox1
             // 
@@ -631,6 +598,139 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::SistemaFacturacion.Properties.Resources.recepcion;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(103, 22);
+            this.toolStripButton1.Text = "Nueva Factura";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::SistemaFacturacion.Properties.Resources.disco_flexible;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(69, 22);
+            this.toolStripButton2.Text = "&Guardar";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::SistemaFacturacion.Properties.Resources.impresora;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButton3.Text = "Imprimir";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::SistemaFacturacion.Properties.Resources.volver_a_usar;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButton4.Text = "Refrescar";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::SistemaFacturacion.Properties.Resources.red_30336_1280;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(73, 22);
+            this.toolStripButton5.Text = "Cancelar";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Subtotal:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(40, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Iva:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(40, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 16);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Dcto:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(40, 77);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 16);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Total:";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.lblTotal);
+            this.panel6.Controls.Add(this.lblDcto);
+            this.panel6.Controls.Add(this.lblIva);
+            this.panel6.Controls.Add(this.lblSubtotal);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.label9);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(1460, 18);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(299, 101);
+            this.panel6.TabIndex = 8;
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.Location = new System.Drawing.Point(110, 4);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(0, 25);
+            this.lblSubtotal.TabIndex = 8;
+            // 
+            // lblIva
+            // 
+            this.lblIva.AutoSize = true;
+            this.lblIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIva.Location = new System.Drawing.Point(110, 25);
+            this.lblIva.Name = "lblIva";
+            this.lblIva.Size = new System.Drawing.Size(0, 25);
+            this.lblIva.TabIndex = 9;
+            // 
+            // lblDcto
+            // 
+            this.lblDcto.AutoSize = true;
+            this.lblDcto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDcto.Location = new System.Drawing.Point(110, 49);
+            this.lblDcto.Name = "lblDcto";
+            this.lblDcto.Size = new System.Drawing.Size(0, 25);
+            this.lblDcto.TabIndex = 10;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(110, 72);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 25);
+            this.lblTotal.TabIndex = 11;
+            // 
             // FrmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,6 +744,7 @@
             this.Name = "FrmFactura";
             this.Text = "Factura";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.FrmFactura_Activated);
             this.Load += new System.EventHandler(this.FrmFactura_Load);
             this.panel3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
@@ -674,6 +775,8 @@
             this.groupBox1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -722,5 +825,14 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ListBox lsCliente;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblDcto;
+        private System.Windows.Forms.Label lblIva;
+        private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
     }
 }

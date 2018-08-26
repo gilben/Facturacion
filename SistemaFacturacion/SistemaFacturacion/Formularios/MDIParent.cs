@@ -195,5 +195,30 @@ namespace SistemaFacturacion.Formularios
         {
 
         }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm1 in Application.OpenForms)
+            {
+
+                if (frm1.Text == "Compañias")
+                {
+                    frm1.BringToFront();
+                    return;
+                }
+
+            }
+            Form FrmCompañias = new FrmMaestros("Compañias");
+            FrmCompañias.MdiParent = this;
+            FrmCompañias.Text = "Compañias";
+            FrmCompañias.Show();
+        }
+
+        private void reporteDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form FrmReporteFacturasMes = new FrmReporteFacturaMes();
+            FrmReporteFacturasMes.MdiParent = this;
+            FrmReporteFacturasMes.Show();
+        }
     }
 }

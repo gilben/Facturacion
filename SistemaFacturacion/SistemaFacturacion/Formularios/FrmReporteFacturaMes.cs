@@ -8,21 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace SistemaFacturacion.Formularios
 {
-    public partial class FrmReporteFactura : Form
+    public partial class FrmReporteFacturaMes : Form
     {
         Microsoft.Reporting.WinForms.ReportDataSource DataSourceReporte = new Microsoft.Reporting.WinForms.ReportDataSource();
-        string Documento;
-        public FrmReporteFactura(string Factura)
+        public FrmReporteFacturaMes()
         {
             InitializeComponent();
-            Documento = Factura;
-
         }
 
-        private void FrmReporteFactura_Load(object sender, EventArgs e)
+        private void FrmReporteFacturaMes_Load(object sender, EventArgs e)
         {
             Clases.ProcesaDatos datos = new Clases.ProcesaDatos();
             //string c = "70221428";
@@ -41,30 +37,30 @@ namespace SistemaFacturacion.Formularios
 
 
             //dt = ds.Tables[0];
-            ds= datos.ConsultasCombos("paConsultaReporteFactura",Documento );
+            ds = datos.ConsultasCombos("paReporteFacturasMensual");
 
 
 
-      
-            this.rptFactura.LocalReport.DataSources.Clear();
-            this.rptFactura.Clear();
-            this.rptFactura.Refresh();
- 
-            DataSourceReporte.Name = "DataSet1";
-            DataSourceReporte.Value = ds.Tables[0];
-            this.rptFactura.LocalReport.DataSources.Add(DataSourceReporte);
 
-            this.rptFactura.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptFactura.rdlc";
-            this.rptFactura.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-            this.rptFactura.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
-            this.rptFactura.ZoomPercent = 100;
+            this.rptFacturasMes.LocalReport.DataSources.Clear();
+            this.rptFacturasMes.Clear();
+            this.rptFacturasMes.Refresh();
+
+            rptFacturasMes.Name = "DataSet1";
+            //rptFacturasMes.Value = ds.Tables[0];
+            this.rptFacturasMes.LocalReport.DataSources.Add(DataSourceReporte);
+
+            this.rptFacturasMes.LocalReport.ReportEmbeddedResource = "SistemaFacturacion.Reportes.rptReporteFacturas.rdlc";
+            this.rptFacturasMes.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            this.rptFacturasMes.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
+            this.rptFacturasMes.ZoomPercent = 100;
 
 
-            this.rptFactura.RefreshReport();
+            this.rptFacturasMes.RefreshReport();
 
-         
+
+
+            this.rptFacturasMes.RefreshReport();
         }
-
-      
     }
 }

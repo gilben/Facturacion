@@ -237,6 +237,7 @@
             this.ShowInTaskbar = false;
             this.Text = "GestionarInsumo";
             this.TopMost = true;
+      
             this.Load += new System.EventHandler(this.FrmGestionarInsumo_Load);
             this.gbInsumo.ResumeLayout(false);
             this.gbInsumo.PerformLayout();

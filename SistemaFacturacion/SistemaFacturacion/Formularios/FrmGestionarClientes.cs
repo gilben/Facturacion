@@ -193,6 +193,7 @@ namespace SistemaFacturacion.Formularios
         {
             GuardarActualizarCliente();
 
+
         }
 
         private void GuardarActualizarCliente()
@@ -235,14 +236,7 @@ namespace SistemaFacturacion.Formularios
                 int i = 0;
                 foreach (DataRow dr1 in dt1.Rows)
                 {
-                    //if (string.IsNullOrEmpty(dr1.ItemArray[2].ToString()))
-                    //{
-
-                    ////    dt1.Rows.RemoveAt(i);
-
-                    ////    dt1.AcceptChanges();
-                    ////}
-
+                   
                   
                   
                     if (string.IsNullOrEmpty(dr1.ItemArray[1].ToString()))
@@ -263,24 +257,18 @@ namespace SistemaFacturacion.Formularios
                     rb = true;
                 }
 
-                //if(dt1.Rows.Count>0)
-                //{
-                //    DataRow[] dr = dt1.Select("Direccion <>'' ");
-                //    dt1 = dr.CopyToDataTable();
-                //}
               
-
-
-
                 DataTable dt = Clases.ProcesaDatos.ProcesarClientes("paInsertarActualizarClientes", new object[] { idCliente_,txtNit.Text, txtRz.Text, txtNombre.Text, txtEmail.Text, txtContacto.Text, txtTel1.Text, txtTel2.Text, txtCel.Text, rb }, dt1);//dts = Clases.ProcesaDatos.ProcesarFactura("paInsertarDatosFactura", new object[] { txtNumFac.Text, 1, cbbCliente.SelectedValue.ToString(), cbbSede.SelectedValue.ToString(), cbbResolucion.SelectedValue.ToString(), 1, cbbCompania.SelectedValue.ToString(), rtxComentarios.Text, Iva, Subtotal, Total, BaseGravable, Math.Round(Descuento, 27), dtpFechavencimento.Text, dtpFechaFactura.Text }, (DataTable)dgvInsumosFacturar.DataSource);
 
 
                 if (dt.Rows[0][0].ToString() == "ok")
                 {
 
-                    MessageBox.Show(btn, "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Form c = new FrmMaestros();
-                    
+                    MessageBox.Show("El cliente se ha "+btn+"Correctamente", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
+                    FrmMaestros obj = (FrmMaestros)Application.OpenForms["FrmMaestros"];
+                    obj.Refreshdata();
+
                     this.Close();
                 } else
                 {

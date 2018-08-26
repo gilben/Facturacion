@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>SistemaFacturacionReverdecer</ProductName>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -94,6 +94,12 @@
     <Compile Include="Clases\clsConexion.cs" />
     <Compile Include="Clases\clsUtilidades.cs" />
     <Compile Include="Clases\ProcesaDatos.cs" />
+    <Compile Include="Formularios\FrmCompañias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCompañias.Designer.cs">
+      <DependentUpon>FrmCompañias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     <Compile Include="Formularios\FrmReporteFactura.Designer.cs">
       <DependentUpon>FrmReporteFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmReporteFacturaMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReporteFacturaMes.Designer.cs">
+      <DependentUpon>FrmReporteFacturaMes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\MDIParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,11 +170,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sistema_FacturacionDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Sistema_FacturacionDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_FacturacionDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Sistema_FacturacionDataSet5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\FrmCompañias.resx">
+      <DependentUpon>FrmCompañias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmFactura.resx">
       <DependentUpon>FrmFactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +201,9 @@
     <EmbeddedResource Include="Formularios\FrmReporteFactura.resx">
       <DependentUpon>FrmReporteFactura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReporteFacturaMes.resx">
+      <DependentUpon>FrmReporteFacturaMes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +218,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\rptFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\rptReporteFacturas.rdlc" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -248,6 +272,17 @@
     </None>
     <None Include="Sistema_FacturacionDataSet3.xss">
       <DependentUpon>Sistema_FacturacionDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet4.xsc">
+      <DependentUpon>Sistema_FacturacionDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_FacturacionDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_FacturacionDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_FacturacionDataSet4.xss">
+      <DependentUpon>Sistema_FacturacionDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Sistema_FacturacionDataSet5.xsc">
       <DependentUpon>Sistema_FacturacionDataSet5.xsd</DependentUpon>

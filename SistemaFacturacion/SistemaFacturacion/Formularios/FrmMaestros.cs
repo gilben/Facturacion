@@ -13,12 +13,17 @@ namespace SistemaFacturacion.Formularios
     public partial class FrmMaestros : Form
     {
         Clases.ProcesaDatos pd = new Clases.ProcesaDatos();
-        string TipoConsulta_;
+        string TipoConsulta_="";
         DataSet ds;
 
 
       
-       
+       public void Refreshdata()
+        {
+            
+            ConsultaDatosInsumos();
+        
+        }
 
 
         public FrmMaestros()
@@ -42,6 +47,8 @@ namespace SistemaFacturacion.Formularios
          public  void ConsultaDatosInsumos()
 
         {
+          
+
             Clases.clsUtilidades ut = new Clases.clsUtilidades();
             ds = pd.ConsultasCombos("paConsultas", "1");
 
@@ -55,6 +62,14 @@ namespace SistemaFacturacion.Formularios
                 gbppal.Text = "Clientes";
                 dgvMaestros.DataSource = ds.Tables[1];
                 dgvMaestros.Columns["Id"].Visible = false;
+            }
+            else if(TipoConsulta_ == "Compañias")
+            {
+                gbppal.Text = "Compañias";
+                dgvMaestros.DataSource = ds.Tables[2];
+                dgvMaestros.Columns["IdCompañia"].Visible = false;
+                dgvMaestros.Columns["Logo"].Visible = false;
+
             }
             ut.AlinearContenidoColumna(dgvMaestros);
             dgvMaestros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -70,9 +85,16 @@ namespace SistemaFacturacion.Formularios
             {
                 Form FrmClientes = new FrmGestionarClientes();
                 FrmClientes.Show();
+
+            }
+        else if (TipoConsulta_ == "Compañias")
+            {
+                Form FrmCompañias = new FrmCompañias(0,0);
+                FrmCompañias.Show();
                 
             }
-        }
+
+}
 
    
 
@@ -109,9 +131,10 @@ namespace SistemaFacturacion.Formularios
 
         private void dgvMaestros_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int row = dgvMaestros.CurrentCell.RowIndex;
             if (TipoConsulta_ == "Insumos")
             {
-                int row = dgvMaestros.CurrentCell.RowIndex;
+               
                 string CodigoInsumo = dgvMaestros.Rows[row].Cells["CodigoInsumo"].Value.ToString();
 
                 Form FrmInsumos = new FrmGestionarInsumo(CodigoInsumo);
@@ -119,11 +142,19 @@ namespace SistemaFacturacion.Formularios
                 FrmInsumos.Show();
             }else if(TipoConsulta_=="Clientes")
             {
-                int row = dgvMaestros.CurrentCell.RowIndex;
+                
                 string Nit = dgvMaestros.Rows[row].Cells["Nit"].Value.ToString();
                 int Id = int.Parse( dgvMaestros.Rows[row].Cells["Id"].Value.ToString());
                 Form FrmClientes = new FrmGestionarClientes(Nit,Id);
                 FrmClientes.Show();
+
+            }
+            else if (TipoConsulta_ == "Compañias")
+            {
+                
+                int Id = int.Parse(dgvMaestros.Rows[row].Cells["IdCompañia"].Value.ToString());
+                Form FrmCompañias = new FrmCompañias(Id,1);
+                FrmCompañias.Show();
 
             }
 
@@ -134,5 +165,7 @@ namespace SistemaFacturacion.Formularios
             ConsultaDatosInsumos();
             textBox1.Text = "";
         }
+
+    
     }
 }

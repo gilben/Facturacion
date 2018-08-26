@@ -34,6 +34,8 @@ namespace SistemaFacturacion.Formularios
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+         
+            
         }
 
         private void FrmGestionarInsumo_Load(object sender, EventArgs e)
@@ -106,7 +108,7 @@ namespace SistemaFacturacion.Formularios
         {
             if (txtDescripcion.Text == "")
             {
-                errorProvider1.SetError(txtDescripcion, "Amor este campo no puede estar vacio");
+                errorProvider1.SetError(txtDescripcion, "Este campo no puede estar vacio");
                // MessageBox.Show("El campo descripcion es obligatorio", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtDescripcion.Focus();
                 return true;
@@ -114,14 +116,14 @@ namespace SistemaFacturacion.Formularios
             else { errorProvider1.Clear(); }
             if (txtPrecio.Text == "")
             {
-                errorProvider1.SetError(txtPrecio, "Amor este campo no puede estar vacio");
+                errorProvider1.SetError(txtPrecio, "Este campo no puede estar vacio");
                 //MessageBox.Show("El campo Precio es obligatorio", "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtPrecio.Focus();
                 return true;
             }else { errorProvider1.Clear(); }
             if(txtCantidadActual.Text=="")
             {
-                errorProvider1.SetError(txtCantidadActual, "Amor este campo no puede estar vacio");
+                errorProvider1.SetError(txtCantidadActual, "Este campo no puede estar vacio");
                 return true;
             }
             else { errorProvider1.Clear(); }
@@ -151,10 +153,12 @@ namespace SistemaFacturacion.Formularios
 
                 MessageBox.Show("Ocurrio un error durante el proceso"+ex, "Sistema facturacion Reverdecer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
-                
-            
+
+
+            FrmMaestros obj = (FrmMaestros)Application.OpenForms["FrmMaestros"];
+            obj.Refreshdata();
+        
+
 
         }
 
@@ -173,11 +177,13 @@ namespace SistemaFacturacion.Formularios
 
         private void txtPrecio_Validated(object sender, EventArgs e)
         {
-            if (txtPrecio.Text == "")
-                return;
-           decimal _txtPrecio= decimal.Parse( txtPrecio.Text);
-            txtPrecio.Text = _txtPrecio.ToString("N");
+           // if (txtPrecio.Text == "")
+           //     return;
+           //decimal _txtPrecio= decimal.Parse( txtPrecio.Text);
+           // txtPrecio.Text = _txtPrecio.ToString("N");
         }
+
+     
     }
 }
 

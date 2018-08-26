@@ -77,11 +77,18 @@ namespace SistemaFacturacion.Clases
         {
 
             long Dft = 0;
-            if (texbox.Text.Length < 1)
+            if (texbox.Text.Length < 1 || (texbox.Text.Length==1 && texbox.Text=="%"))
+            {
                 texbox.Text = "0";
+                texbox.SelectAll();
+            }
+                
+              
+            
 
             foreach(object obj in  ParametroExcluir)
             {
+               
                // if (texbox.Text.Substring(texbox.Text.Length - 1) != obj.ToString())
                if(!texbox.Text.Contains(obj.ToString()))
                 {

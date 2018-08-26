@@ -303,7 +303,7 @@
             this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -320,6 +320,8 @@
             this.dgvFacturas.Size = new System.Drawing.Size(1140, 699);
             this.dgvFacturas.StandardTab = true;
             this.dgvFacturas.TabIndex = 0;
+            this.dgvFacturas.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvFacturas_RowPrePaint);
+            this.dgvFacturas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvFacturas_MouseClick);
             this.dgvFacturas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvFacturas_MouseDoubleClick);
             // 
             // toolStrip1
@@ -367,6 +369,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(69, 23);
             this.toolStripButton4.Text = "&Anular";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripSeparator3
             // 
@@ -406,6 +409,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.FrmMenuFactura_Activated);
             this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
